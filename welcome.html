@@ -6,31 +6,43 @@
 </head>
 <body>
 
-<!-- It provides more structure -->
-<h1>Hello world <span>25-02-2020</span></h1>
+<header>
+    <!-- It provides more structure -->
+    <h1>Hello world <span>25-02-2020</span></h1>
+</header>
 
-<p>
-    Understanding HTML is <em>really</em> <strong>important</strong>!
-</p>
-
-<p>
-    Understanding HTML is
-    <em>
-        <strong>
-            really important
-        </strong>
-    </em>!
-</p>
-
-<div id="main-header">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi atque beatae cupiditate deleniti maxime
-    odio quo repellendus totam, voluptatibus.<br><br> Id, inventore, velit. Ad molestiae molestias nobis repudiandae
-    soluta, vitae?
-</div>
-
-<hr>
+<nav>
+    <ul>
+        <li><a href="#">Intro</a></li>
+        <li><a href="#">HTML</a></li>
+    </ul>
+</nav>
 
 <main id="main-content">
+
+    <article>
+        Understanding HTML is <em>really</em> <strong>important</strong>!
+    </article>
+
+    <article>
+        Understanding HTML is
+        <em>
+            <strong>
+                really important
+            </strong>
+        </em>!
+    </article>
+
+    <section id="main-header">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi atque beatae cupiditate deleniti
+        maxime
+        odio quo repellendus totam, voluptatibus.<br><br> Id, inventore, velit. Ad molestiae molestias nobis repudiandae
+        soluta, vitae?
+    </section>
+
+    <hr>
+
+
     <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam commodi consectetur deleniti dolore dolores
         doloribus exercitationem itaque iure, labore laboriosam nemo obcaecati odio officiis perferendis quibusdam
@@ -42,52 +54,57 @@
         ex fugit harum hic ipsa ipsum laborum minus mollitia odio quasi sed tenetur veniam. Ipsam, modi?
     </p>
 
+
+    <div>
+        <ol>
+            <li>Apples</li>
+            <li>Cherries</li>
+            <li>Bananas</li>
+        </ol>
+        <ul>
+            <li>Java</li>
+            <li>JavaScript</li>
+            <li>Python</li>
+            <li>
+                <a href="https://www.php.net" target="_blank">PHP</a>
+            </li>
+        </ul>
+    </div>
+
+    <div>
+        <!--  Image hotlink  -->
+        <img src="https://i.ytimg.com/vi/MPV2METPeJU/maxresdefault.jpg" alt="picture of a dog" width="100%">
+        <!-- local file -->
+        <img src="imgs/angry-dog.jpg" alt="picture of an angry dog" width="100%">
+
+    </div>
+
+
+    <div>
+        <table border="1">
+            <tr>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Vegan</th>
+            </tr>
+            <tr>
+                <td>Iced Tea</td>
+                <td>$3.99</td>
+                <td>Yes</td>
+            </tr>
+            <tr>
+                <td>Hot-dog</td>
+                <td>$5.99</td>
+                <td>No</td>
+            </tr>
+        </table>
+    </div>
+
 </main>
 
-<div>
-    <ol>
-        <li>Apples</li>
-        <li>Cherries</li>
-        <li>Bananas</li>
-    </ol>
-    <ul>
-        <li>Java</li>
-        <li>JavaScript</li>
-        <li>Python</li>
-        <li>
-            <a href="https://www.php.net" target="_blank">PHP</a>
-        </li>
-    </ul>
-</div>
-
-<div>
-    <!--  Image hotlink  -->
-    <img src="https://i.ytimg.com/vi/MPV2METPeJU/maxresdefault.jpg" alt="picture of a dog" width="100%">
-    <!-- local file -->
-    <img src="imgs/angry-dog.jpg" alt="picture of an angry dog" width="100%">
-
-</div>
-
-
-<div>
-    <table border="1">
-        <tr>
-            <th>Product</th>
-            <th>Price</th>
-            <th>Vegan</th>
-        </tr>
-        <tr>
-            <td>Iced Tea</td>
-            <td>$3.99</td>
-            <td>Yes</td>
-        </tr>
-        <tr>
-            <td>Hot-dog</td>
-            <td>$5.99</td>
-            <td>No</td>
-        </tr>
-    </table>
-</div>
+<footer>
+    Secondary links and copyright notices
+</footer>
 
 </body>
 </html>
