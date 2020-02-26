@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    Forms Example
+    <form method="post" action="https://request-inspector.glitch.me">
+        <label for="search_query">Search</label> <input type="text" id="search_query" name="search_query"><br>
+        Password: <input type="password" name="password"><br>
+        Bio: <textarea cols="80" name="bio" rows="10" maxlength="1000" >Write your bio here.</textarea><br>
+        <label>A is my answer. <input type="radio" name="quiz_question_1" value="a"></label><br>
+        B <input type="radio" name="quiz_question_1" value="b"><br>
+        C <input type="radio" name="quiz_question_1" value="c"><br>
+        D <input type="radio" name="quiz_question_1" value="d"><br>
+        May I spam your email? <input type="checkbox" name="spam" value="SpamMePlease" checked >
+        <select name="coffee_preference">
+            <option value=""></option>
+            <option value="light">Light Roast</option>
+            <!-- Dark roast is selected by default because it is better. :) -->
+            <option value="dark" selected>Dark Roast</option>
+            <option value="espresso" disabled>Espresso Blend</option>
+        </select>
+        <input type="hidden" name="user_id" value="1234" >
+        <input type="date" name="departureDate">
+        <button type="submit" >Search</button>
+    </form>
+</body>
+</html>
