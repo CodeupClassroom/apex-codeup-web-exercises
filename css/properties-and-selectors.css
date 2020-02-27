@@ -1,0 +1,89 @@
+.fancy-header {
+    color: green;
+}
+
+.extra-large {
+    font-size: 25px;
+}
+
+.fancy-header, .extra-large {
+    background-color: blue;
+}
+
+#a-really-cool-container h1 {
+    color: aquamarine;
+}
+
+/*Direct descendant operator > */
+#a-really-cool-container>h1 {
+    text-decoration: underline;
+    background-color: bisque;
+}
+
+h1.extra-fancy-header {
+    text-decoration: underline;
+}
+
+p#specific-id {
+    color: blueviolet;
+}
+
+p#specific-id:hover {
+    color: black;
+    background-color: #7cb342;
+}
+
+a:hover {
+    background-color: blue;
+}
+
+a:link {
+    color: rosybrown;
+}
+
+a:visited {
+    color: cadetblue;
+}
+
+a:active {
+    background-color: gray;
+    font-size: 50px;
+}
+
+.something {
+    /* #0000FF */
+    color: #00F;
+}
+
+.overline {
+    text-decoration: overline;
+    text-align: right;
+}
+
+.long-paragraph {
+    font-size: 1.2em;
+    text-indent: 20px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-style: italic;
+    font-weight: lighter;
+    background-color: #7cb342;
+    background-size: 100px;
+    background-repeat: repeat-x;
+    background-image: url("https://java.codeup.com/img/logo.png");
+}
+
+ol {
+    list-style: square;
+}
+
+h2.smaller-fancy-header {
+    color: gray;
+}
+
+ul {
+    background-color: #7cb342;
+}
+
+ul li {
+    background-color: inherit;
+}

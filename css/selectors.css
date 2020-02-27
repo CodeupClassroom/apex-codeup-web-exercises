@@ -1,0 +1,30 @@
+/* selector for id="container" */
+selector-todo {
+    margin: 50px auto;
+    width: 500px;
+    padding: 10px;
+}
+
+/*  selector for all "h1" elements
+    that are a descendent of id="container"
+    and have a class of "fancy-header" */
+selector-todo {
+    color: blue;
+    text-decoration: underline;
+}
+
+/* selector for all "em" elements */
+selector-todo {
+    font-weight: bold;
+}
+
+/* selector for all elements with class="article" */
+selector-todo {
+    clear:both;
+}
+
+/*  selector for all "anchor" elements
+    that are a direct child of an element with class="article" */
+selector-todo {
+    float:right;
+}
