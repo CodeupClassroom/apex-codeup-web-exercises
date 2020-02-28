@@ -1,0 +1,47 @@
+body, html {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Ubuntu, sans-serif;
+}
+
+:root {
+    --main-bg-color: rgb(176, 255, 97);
+}
+
+.message {
+    width: 90%;
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid lightgrey;
+}
+
+.message-info {
+    background-color: var(--main-bg-color);
+    color: rgb(59, 62, 75);
+}
+
+.message-success {
+    background-color: rgb(98, 255, 176);
+    color: rgb(5, 75, 11);
+}
+
+.message-warning {
+    background-color: rgb(253, 255, 136);
+    color: rgb(75, 65, 57);
+}
+
+.message-error {
+    background-color: rgb(255, 168, 163);
+    color: rgb(75, 19, 29);
+}
+
+#icon {
+    background-color: var(--main-bg-color);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 auto;
+}
