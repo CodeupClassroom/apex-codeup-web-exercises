@@ -59,6 +59,11 @@ a {
 .profile-form {
     line-height: 80px;
 }
+
+.container {
+    padding: 2em;
+}
+
 .btn {
     border: 1px solid var(--main-link-color);
     color: var(--main-link-color);
@@ -95,4 +100,29 @@ a {
     float: left;
     width: calc(25% - 1em);
     margin: 0 0.5em;
+}
+.media {
+    width: 100%;
+    background-color: var(--light-bg);
+    border-bottom: 1px solid var(--separator-color);
+    padding: 0.5em;
+    overflow: auto;
+}
+.media-image {
+    margin-top: 1.33em;
+    width: 50px;
+    float: left;
+}
+.media-body {
+    width: calc(100% - 50px);
+    float: left;
+}
+
+.profile-entry {
+    list-style: none;
+    margin: .3em 0;
+}
+
+.profile-items {
+    padding: 0;
 }
