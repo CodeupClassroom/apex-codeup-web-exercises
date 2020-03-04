@@ -57,6 +57,10 @@ header nav .nav-bar-right {
     justify-content: flex-end;
 }
 
+li:not(.logo-item) {
+    z-index: 1;
+}
+
 p {
     text-align: center;
 }
