@@ -44,7 +44,7 @@
     flex-grow: 1;
 }
 
-.most-special {
+.container2 .most-special {
     background-color: red;
     flex-grow: 2;
 }
@@ -65,5 +65,5 @@
 }
 
 .container3 div:nth-child(1) {
-    flex-grow: 3;
+    flex-grow: 2;
 }
