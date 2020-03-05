@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Grid Fundamentals Template Area</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            text-align: center;
+        }
+        main {
+            margin-top: 2em;
+            background: lightgreen;
+            display: inline-grid;
+            width: 600px;
+            height: 600px;
+            grid-template-areas:
+                    "red red . . . green green"
+                    "red red . . . green green"
+                    ". . . . . . ."
+                    "blue blue blue . . . ."
+                    "blue blue blue . . . .";
+        }
+        main div {
+            font-size: 2em;
+            color: black;
+            background: grey;
+            border: 1px solid black; /* thin out border to 1px */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .red {
+            grid-area: red;
+            background: lightcoral;
+        }
+        .green {
+            grid-area: green;
+            background: lightgreen;
+        }
+        .blue {
+            grid-area: blue;
+            background: lightblue;
+        }
+    </style>
+</head>
+<body>
+<main>
+    <div class="red">red</div>
+    <div class="green">green</div>
+    <div class="blue">blue</div>
+</main>
+</body>
+</html>
