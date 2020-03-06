@@ -1,0 +1,140 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: monospace;
+}
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Playfair Display', serif;
+    margin: 0;
+}
+
+h1 {
+    font-size: 4em;
+    margin: 0;
+}
+h2 {
+    font-size: 3em;
+    margin: 0;
+}
+h3 {
+    font-size: 2em;
+}
+p, a, button {
+    font-family: "Roboto";
+}
+button {
+    font-size: 1.2em;
+    background: black;
+    color: white;
+    border: none;
+    padding: 1em;
+    border-radius: .2em;
+    margin: 2em 0;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr repeat(3, 20%) 1fr;
+    grid-template-areas:
+            ". header    header    header    ."
+            ". section-1 section-2 section-3 ."
+            ". section-4 section-4 section-4 ."
+            ". footer    footer    footer    .";
+    grid-row-gap: 7em;
+    grid-column-gap: 3em;
+}
+
+.logo {
+    font-family: 'Great Vibes', cursive;
+    font-size: inherit;
+}
+
+header {
+    grid-area: header;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+section:nth-of-type(1) {
+    grid-area: section-1;
+}
+
+section:nth-of-type(2) {
+    grid-area: section-2;
+}
+section:nth-of-type(3) {
+    grid-area: section-3;
+}
+section:nth-of-type(4) {
+    grid-area: section-4;
+}
+
+footer {
+    grid-area: footer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3em;
+}
+
+.brands {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: baseline;
+    list-style: none;
+    font-size: 2em;
+    letter-spacing: 10px;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    list-style: none;
+    align-self: flex-end;
+}
+
+.background-img {
+    background: url("../imgs/instruments.jpg") no-repeat center center fixed;
+    background-size: cover;
+    grid-area: 1 / 1 / 2 / -1;
+    min-height: 100vh;
+    opacity: .4;
+    z-index: -1;
+}
+
+i {
+    font-size: 2em;
+    margin-bottom: 1em;
+}
+a {
+    text-decoration: none;
+    color: mediumblue;
+}
+
+.brand-1 {
+    font-family: "Comic Sans MS", sans-serif;
+}
+.brand-2 {
+    font-family: "fantasy";
+}
+.brand-3 {
+    font-family: "monospace";
+    font-weight: bold;
+}
+.brand-4 {
+    font-family: "courier";
+}
+
+.footer-links li {
+    padding: 1em;
+}

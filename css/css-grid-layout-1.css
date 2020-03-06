@@ -1,0 +1,35 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+.container {
+    background-color: white;
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-gap: 6px;
+    grid-template-columns: 20% 1fr 15%;
+    grid-template-rows: 4em 1fr 4em;
+}
+
+.container div {
+    background-color: yellow;
+    padding: 8px;
+}
+
+.header {
+    grid-row: 1 / span 1;
+    grid-column: 1 / -1;
+}
+
+.nav {
+    grid-row: 2 / -1;
+}
+
+.footer {
+    grid-column: 2 / -1;
+}
