@@ -28,8 +28,20 @@ body {
 
 .nav {
     grid-row: 2 / -1;
+    grid-column: 1 / span 1;
+}
+
+.article {
+    grid-row: 2 / span 1;
+    grid-column: 2 / span 1;
+}
+
+.ads {
+    grid-row: 2 / span 1;
+    grid-column: 3 / span 1;
 }
 
 .footer {
+    grid-row: 3 / span 1;
     grid-column: 2 / -1;
 }
