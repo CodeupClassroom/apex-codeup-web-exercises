@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+
+        /* Mobile First Approach */
+        body {
+            background-color: cyan;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+        }
+
+        .login-form input {
+            width: 95%;
+            line-height: 2em;
+        }
+
+        .login-form label {
+            font-weight: bolder;
+            font-size: 2em;
+        }
+
+        .hide-on-small-and-medium {
+            display: none;
+            width: 50%;
+            height: 50%;
+        }
+
+        /* Medium devices (tablets, 768px and up) */
+        @media screen and (min-width:768px) {
+            body {
+                background-color: #77AF00;
+            }
+
+            .login-form input {
+                width: 85%;
+                line-height: 1.5em;
+            }
+
+            .login-form label {
+               
+                font-size: 1.5em;
+            }
+
+        }
+
+        /* Large devices (desktops, 992px and up) */
+        @media screen and (min-width:992px) {
+            body {
+                background-color: #ff4308;
+            }
+
+            .hide-on-small-and-medium {
+                display: block;
+            }
+
+        }
+
+        /* Extra large devices (large desktops, 1200px and up) */
+        @media screen and (min-width:1200px) {
+            body {
+                background-color: lightpink;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+<main class="container">
+
+    <img class="hide-on-small-and-medium" src="https://pogofind.me/imgs/icons/red-team.svg" alt="">
+    
+    <form action="" class="login-form">
+        <label for="">Username</label>
+        <br>
+        <input type="text">
+        <br>
+        <label for="">Password</label>
+        <br>
+        <input type="password">
+    </form>
+</main>
+
+
+</body>
+</html>
