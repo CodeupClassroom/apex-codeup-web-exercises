@@ -1,0 +1,167 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap Grid</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <!-- Your custom styles go here -->
+    <style>
+        body {
+            height: 100vh;
+        }
+        div.row {
+            border: 1px dashed blue;
+        }
+        div.row > div {
+            border: 1px solid red;
+        }
+        div.tall-row {
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+<!--
+Behind the scenes Bootstrap grids use flex box.
+
+First create a container. You have to give it the class container
+-->
+<h4 class="text-center mt-3">Empty Container</h4>
+<div class="container"></div>
+<!--
+Row
+Add two rows
+-->
+
+<h4 class="text-center mt-3">Empty Rows</h4>
+<div class="container">
+    <div class="row">
+
+    </div>
+    <div class="row">
+
+    </div>
+</div>
+<!--
+Column col col-[1-12] col-[size]-[1-12]
+A column in a row is a cell.
+
+First we are going to show auto columns
+-->
+<h4 class="text-center mt-3">Auto Columns</h4>
+<div class="container">
+    <div class="row">
+        <div class="col">One of two</div>
+        <div class="col">Two of two</div>
+    </div>
+    <div class="row">
+        <div class="col">One of one</div>
+    </div>
+</div>
+<!--
+Here we show that the columns are taking up an even amount of space based on the number of columns on the row.
+-->
+<h4 class="text-center mt-3">Specify Columns</h4>
+<div class="container">
+    <div class="row">
+        <div class="col-4">One of two</div>
+        <div class="col-8">Two of two</div>
+    </div>
+    <div class="row">
+        <div class="col">One of one</div>
+    </div>
+</div>
+<!--
+Here we are using break points based on device size. Col-md-4
+-->
+<h4 class="text-center mt-3">Specify Columns Based on Device Size</h4>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4 col-md-6 col-lg-8">One of two</div>
+        <div class="col-sm-8 col-md-6 col-lg-4">Two of two</div>
+    </div>
+    <div class="row">
+        <div class="col">One of one</div>
+    </div>
+</div>
+<!--
+Here we are creating empty space by using two columns at 4 and 4.
+-->
+<h4 class="text-center mt-3">Empty Row Space</h4>
+<div class="container">
+    <div class="row">
+        <div class="col-4">One of two</div>
+        <div class="col-4">Two of two</div>
+    </div>
+    <div class="row">
+        <div class="col">One of one</div>
+    </div>
+</div>
+<!--
+Here we are centering horizontally by using justify-content-center.
+Other flexbox options work too.
+
+We can see cols are stretch by default by giving row some height with the tall-row class.
+Show centering columns when there is empty space.
+-->
+<h4 class="text-center mt-3">Horizontal Alignment of Cells</h4>
+<div class="container">
+    <div class="row tall-row justify-content-center justify-content-xl-around">
+        <div class="col-4">One of two</div>
+        <div class="col-4">Two of two</div>
+    </div>
+    <div class="row tall-row">
+        <div class="col">One of one</div>
+    </div>
+</div>
+<!--
+Here we align items to allow the columns to only take up the space of their content. We can use align-self-start to show one column aligning itself.
+-->
+<h4 class="text-center mt-3">Vertical Alignment of Cells</h4>
+<div class="container">
+    <div class="row tall-row align-items-start">
+        <div class="col-4">One of Three</div>
+        <div class="col-4">Two of Three</div>
+        <div class="col-4 align-self-center">Three of Three</div>
+    </div>
+    <div class="row tall-row">
+        <div class="col">One of one</div>
+    </div>
+</div>
+
+<!--
+Here we can offset by using the offset-4 class.
+-->
+<h4 class="text-center mt-3">Using offset to push Cells to the right.</h4>
+<div class="container">
+    <div class="row tall-row">
+        <div class="col-4 offset-4">One of Three</div>
+        <div class="col-4">Two of Three</div>
+    </div>
+    <div class="row tall-row">
+        <div class="col">One of one</div>
+    </div>
+</div>
+<!--
+We can use the order class to change the order that columns are displayed.
+Be careful if you use this.
+-->
+<h4 class="text-center mt-3">Change Order of Cells</h4>
+<div class="container">
+    <div class="row tall-row">
+        <div class="col-4 order-12">One of Three</div>
+        <div class="col-4 order-1">Two of Three</div>
+    </div>
+    <div class="row tall-row">
+        <div class="col">One of one</div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+<!-- Your custom JS goes here -->
+</body>
+</html>
