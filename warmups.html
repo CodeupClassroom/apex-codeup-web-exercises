@@ -10,6 +10,8 @@
 
 <script>
 
+    var apex = [''];
+
     //  Exercise 1
     // On the line below, create a variable named onMarsRightNow and assign it the boolean value of false
     var onMarsRightNow = false;
@@ -73,7 +75,8 @@
 
     console.log('Return the first item of an array.', firstItem(favoriteFoods));
 
-    // Exercise 11 Create a function that returns the type of the value you enter in the input parameter of the function
+    // Exercise 11
+    // Create a function that returns the type of the value you enter in the input parameter of the function
 
     function checkType(aValue){
         return typeof aValue;
@@ -83,7 +86,8 @@
     console.log('checkType(\'Apex\') : ' + checkType('Apex'));
     console.log('checkType(true) : ' + checkType(true));
 
-    // Exercise 12 Create a function that takes in an array of values and console.logs the data type of each.
+    // Exercise 12
+    // Create a function that takes in an array of values and console.logs the data type of each.
 
     function checkTypes(anArray){
 
@@ -116,10 +120,16 @@
         return typeof aNumber === "number";
     }
 
-
     console.log('isNumber("Hi"): ' + isNumber("Hi")); // returns false
     console.log('isNumber(42):' + isNumber(42)); // returns true
 
+    // Exercise 15
+    // Create a function that generates and returns a random number between 0 and 10
+    function getRandomNumber(){
+        return Math.floor(Math.random() * 11);
+    }
+
+    console.log(getRandomNumber());
 
 </script>
 </body>
