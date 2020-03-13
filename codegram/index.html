@@ -4,41 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>CodeGram</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    <link rel="stylesheet" href="css/bootstrap.min.css"
           integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/custom.css">
 </head>
 <body>
 
-<header>
-    <nav class="navbar navbar-expand-lg navbar-light border-bottom">
-        <div class="container d-flex justify-content-between">
-            <a class="navbar-brand top-nav-btn" href="https://codeup.com">CodeGram</a>
-                <ul class="navbar-nav d-flex justify-content-end">
-                    <li class="nav-item">
-                        <form action="">
-                            <div class="form-group">
-                                <input type="email" class="form-control d-none d-md-block" id="exampleFormControlInput1" placeholder="Search">
-                            </div>
-                        </form>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link btn btn-sm btn-primary text-white pl-2 pr-2" href="#">Log in <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="p-2 text-blue" href="#">Sign up</a>
-                    </li>
-                </ul>
-            </div>
-    </nav>
-</header>
+<nav class="navbar navbar-expand-lg navbar-light border-bottom">
+    <div class="container d-flex justify-content-between">
+        <a class="navbar-brand top-nav-btn" href="https://codeup.com">CodeGram</a>
+        <ul class="nav">
+            <li class="nav-item">
+                <form action="">
+                    <div class="form-group">
+                        <input type="email" class="form-control d-none d-md-block" id="exampleFormControlInput1"
+                               placeholder="Search">
+                    </div>
+                </form>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link btn btn-sm btn-primary text-white pl-2 pr-2" href="#">Log in</a>
+            </li>
+            <li class="nav-item">
+                <a class="mt-2 p-2 text-blue" href="#">Sign up</a>
+            </li>
+        </ul>
+    </div>
+</nav>
 
 <main class="container">
 
-    <div class="row">
-        <div class="col-sm-3">
+    <header class="row">
+        <div class="col">
+            <img class="rounded img-fluid float-left p-2 mr-3" id="user-logo" src="../imgs/profile.png" alt="" width="100" height="100">
+            <div class="p-2">
+                <strong>gocodeup</strong>
+                <br>
+                <button class="btn btn-primary mt-1">Follow</button>
+            </div>
+        </div>
+    </header>
 
+    <div class="row">
+        <div class="col-sm-12 col-md-6">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci consequatur dicta dolorem nostrum quaerat veritatis vitae. Autem, debitis, in. Aut cumque ipsum itaque magnam minima nam pariatur reprehenderit tempora temporibus!
+        </div>
+        <div class="col-sm-12 col-md-6">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae consectetur cupiditate deserunt dolor dolorum et, fuga illo ipsa magni molestiae, necessitatibus non praesentium, quas quibusdam quo sed totam ut voluptatum.
         </div>
     </div>
 
