@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!-- We do not recommend to have inline script-->
+<script>
+    "use strict";
+    // IIFE, to get rid of global scope
+    (function(){
+        var globalCohortName = 'Apex';
+        // rest of the code inside of IIFE
+    })();
+
+    function shower() {
+        var waterTemp = 'hot';
+        console.log('wake up');
+        console.log('turn the water on');
+        console.log('wash yourself');
+        console.log('dry yourself');
+        console.log('Inside console.log',globalCohortName);
+    }
+
+    shower();
+    shower();
+
+    // Global scope var is available for every function or line of code
+    // var globalCohortName = 'Apex';
+
+
+
+    console.log('Outside console.log', globalCohortName);
+
+    // Call the function shower
+    shower();
+    shower();
+    shower();
+
+    function teachRemotely(internetConn, Mic){
+        return internetConn === true && Mic === true;
+    }
+
+    console.log( teachRemotely(true, false) );
+    console.log( teachRemotely(true, true) );
+
+    // Annon functions
+    var callOnFaceTime = function (internetConn){
+        var videoStream = internetConn === true;
+        // ...
+        return videoStream;
+    };
+
+    console.log('callOnFaceTime', callOnFaceTime(true) );
+    console.log('callOnFaceTime', callOnFaceTime(0) );
+
+    function sellCake(price, client){
+        var cake = null;
+        // Function scope vars helps to hide and protect the info
+        var ccNumber = prompt("What's your CC");
+        cake = 'mixing' + 'baking' + 'decorating';
+        console.log('Order ready for ' + client + ' $' + price);
+        return cake;
+    }
+
+    console.log(ccNumber);
+    sellCake(100.56, "Fernando");
+
+</script>
+
+<script>
+    "use strict";
+    (function(){
+
+        function makePayment(){
+            var cc = prompt("Whats your CC number?");
+            // var expDate = prompt("Whats your ExpDate number? MM/YY");
+            // var cvc = prompt("Whats your cvc number?");
+
+            return cc.length != 0;
+        }
+
+        console.log('makePayment', makePayment());
+
+    })();
+
+</script>
+</body>
+</html>
