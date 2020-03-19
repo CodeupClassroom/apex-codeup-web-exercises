@@ -152,3 +152,51 @@ message = (success) ? "Operation was successful." : "Oops, something went wrong.
 
 console.log(message);
 
+var weather = "sunny";
+var weatherMessage = (weather === "rainy") ? "It's raining!" : "Have a nice day! :)";
+
+// if(weather ==="rainy") {
+//     weatherMessage = "It's raining!";
+// } else {
+//     weatherMessage = "Have a nice day. :)";
+// }
+
+console.log(weatherMessage);
+
+// var pizzaPreference = prompt("What kind of pizza do you like?").toLowerCase();
+//
+// if (pizzaPreference === "pepperoni") {
+//     alert('What a coincidence, I love that one too.');
+// } else if (pizzaPreference === "pineapple and hot sauce") {
+//     alert('That is a spicy pizza.')
+// } else if (pizzaPreference === "steak") {
+//     alert('Steak is great!');
+// } else if (pizzaPreference === "cheese") {
+//     alert('Plain cheese is okay!');
+// } else {
+//     alert(pizzaPreference + " isn't my favorite, but let's order some.");
+// }
+
+// As a switch statement:
+var pizzaPreference = prompt("What kind of pizza do you like?").toLowerCase();
+var pizzaConfirmation;
+
+switch (pizzaPreference) {
+    case "pepperoni":
+        pizzaConfirmation = "What a coincidence, I love that one too.";
+        break;
+    case "pineapple and hot sauce":
+        pizzaConfirmation = "That is a spicy pizza.";
+        break;
+    case "steak":
+        pizzaConfirmation = "Steak is great!";
+        break;
+    case "cheese":
+        pizzaConfirmation = "Plain cheese is okay!";
+        break;
+    default:
+        pizzaConfirmation = pizzaPreference + " isn't my favorite, but let's order some.";
+        break;
+}
+
+console.log(pizzaConfirmation);
