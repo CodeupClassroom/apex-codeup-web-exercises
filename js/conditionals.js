@@ -17,8 +17,8 @@ console.log('Hello from the conditionals JS file.');
  */
 
 // Prompt the user for a number. Will return the number or NaN if they don't enter a number.
-function promptForNumber() {
-    var numberInput = prompt('Please enter a number.');
+function promptForNumber(message) {
+    var numberInput = prompt(message);
     return parseInt(numberInput);
 }
 
@@ -44,7 +44,7 @@ var isEnteringNumber = confirm('Would you like to enter a number?');
 
 if (isEnteringNumber) {
     //console.log('Entering a number.');
-    var parsedNumber = promptForNumber();
+    var parsedNumber = promptForNumber('Please enter a number.');
 
     //console.log(parsedNumber, isNaN(parsedNumber));
 
@@ -188,3 +188,9 @@ console.log('calculateTotal(6, 100)', calculateTotal(6, 100));
  */
 //Generate a random number between 0 and 6
 var luckyNumber = Math.floor(Math.random() * 6);
+var parsedNumber = promptForNumber('Please enter your total bill.');
+//console.log('typeof parsedNumber', typeof parsedNumber);
+var finalTotal = calculateTotal(luckyNumber, parsedNumber);
+alert('Your lucky number is ' + luckyNumber);
+alert('Total before discount is ' + parsedNumber);
+alert('Total after discount is ' + finalTotal);
