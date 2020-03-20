@@ -83,14 +83,19 @@ if (isEnteringNumber) {
  */
 
 function analyzeColor(color) {
-    if (color === "blue") {
-        return color + " is the color of the sky";
-    } else if (color === "red") {
-        return "Strawberries are " + color;
-    } else if (color === "cyan") {
-        return "I don't know anything about " + color;
-    } else {
-        return color + " is not valid";
+    switch (color) {
+        case "blue":
+            return color + " is the color of the sky";
+            break;
+        case "red":
+            return "Strawberries are " + color;
+            break;
+        case "cyan":
+            return "I don't know anything about " + color;
+            break;
+        default:
+            return color + " is not valid";
+            break;
     }
 }
 
@@ -111,11 +116,13 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * Pass the `randomColor` variable to your function and console.log the results.
  * You should see a different message every time you refresh the page
  */
+console.log('Should be different every time.', analyzeColor(randomColor));
 
 /**
  * TODO:
  * Refactor your above function to use a switch-case statement
  */
+// Done, see above ^
 
 /**
  * TODO:
