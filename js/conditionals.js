@@ -39,7 +39,7 @@ function plus100(aNumber) {
 function negativeOrPositive(aNumber) {
     return (aNumber >= 0) ? "positive" : "negative";
 }
-
+/*
 var isEnteringNumber = confirm('Would you like to enter a number?');
 
 if (isEnteringNumber) {
@@ -51,7 +51,7 @@ if (isEnteringNumber) {
     if(isNaN(parsedNumber)) {
         alert("You didn't enter a number");
     } else {
-        //alert("You entered a number.");
+        alert("You entered a number.");
         // * - whether the number is even or odd.
         alert('The number is ' + evenOrOdd(parsedNumber));
         // * - what the number plus 100 is
@@ -60,6 +60,7 @@ if (isEnteringNumber) {
         alert('The number is ' + negativeOrPositive(parsedNumber));
     }
 }
+*/
 
 /* ########################################################################## */
 
@@ -80,6 +81,23 @@ if (isEnteringNumber) {
  * Test your function by passing various string literals to it and
  * console.logging the function's return value
  */
+
+function analyzeColor(color) {
+    if (color === "blue") {
+        return color + " is the color of the sky";
+    } else if (color === "red") {
+        return "Strawberries are " + color;
+    } else if (color === "cyan") {
+        return "I don't know anything about " + color;
+    } else {
+        return color + " is not valid";
+    }
+}
+
+console.log(analyzeColor('blue')); // returns "blue is the color of the sky"
+console.log(analyzeColor('red')); // returns "Strawberries are red"
+console.log(analyzeColor('cyan')); // returns "I don't know anything about cyan"
+console.log(analyzeColor('green'));
 
 // Don't change the next two lines!
 // These lines create two variables for you:
