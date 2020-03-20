@@ -16,12 +16,35 @@ console.log('Hello from the conditionals JS file.');
  * Can you refactor your code to use functions?
  */
 
+// Prompt the user for a number. Will return the number or NaN if they don't enter a number.
+function promptForNumber() {
+    var numberInput = prompt('Please enter a number.');
+    return parseInt(numberInput);
+}
+
+// Takes a number and returns the text "even" or "odd" depending on the number.
+function evenOrOdd(aNumber) {
+    if (aNumber % 2 === 0) {
+        return "even";
+    } else {
+        return "odd";
+    }
+}
+
+function plus100(aNumber) {
+    return aNumber + 100;
+}
+
+//Take a number and return the text "positive" or "negative" depending on the number.
+function negativeOrPositive(aNumber) {
+    return (aNumber >= 0) ? "positive" : "negative";
+}
+
 var isEnteringNumber = confirm('Would you like to enter a number?');
 
 if (isEnteringNumber) {
     //console.log('Entering a number.');
-    var numberInput = prompt('Please enter a number.');
-    var parsedNumber = parseInt(numberInput);
+    var parsedNumber = promptForNumber();
 
     //console.log(parsedNumber, isNaN(parsedNumber));
 
@@ -29,17 +52,12 @@ if (isEnteringNumber) {
         alert("You didn't enter a number");
     } else {
         //alert("You entered a number.");
-        // * - whether the number is even or odd
-        // Store the text "even" or "odd"
-        var evenOrOdd = (parsedNumber % 2 === 0) ? "even" : "odd";
-        alert('The number is ' + evenOrOdd);
+        // * - whether the number is even or odd.
+        alert('The number is ' + evenOrOdd(parsedNumber));
         // * - what the number plus 100 is
-        var plus100 = parsedNumber + 100;
-        alert('The number plus 100 is ' + plus100);
+        alert('The number plus 100 is ' + plus100(parsedNumber));
         // * - if the number is negative or positive
-        // Store the text "negative" or "positive"
-        var negativeOrPositive = (parsedNumber >= 0) ? "positive" : "negative";
-        alert('The number is ' + negativeOrPositive);
+        alert('The number is ' + negativeOrPositive(parsedNumber));
     }
 }
 
