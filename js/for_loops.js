@@ -8,8 +8,6 @@ function showMultiplicationTable(input) {
 
 showMultiplicationTable(7);
 
-// This is how you get a random number between 50 and 100
-
 for (var i = 0; i < 10; i++) {
     var randomNumber = Math.floor(Math.random() * 180) + 20;
 
@@ -18,4 +16,20 @@ for (var i = 0; i < 10; i++) {
     } else {
         console.log(randomNumber + ' is odd');
     }
+}
+
+//#4
+for (var i = 1; i <= 9; i++) {
+    console.log(i.toString().repeat(i));
+}
+
+for (var outer = 1; outer <= 9; outer++) {
+    //console.log('outer loop');
+    var output = "";
+
+    for(var inner = 1; inner <= outer; inner++) {
+        output += outer;
+    }
+
+    console.log(output);
 }
