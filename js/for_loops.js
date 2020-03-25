@@ -33,3 +33,8 @@ for (var outer = 1; outer <= 9; outer++) {
 
     console.log(output);
 }
+
+//#5
+for (var i = 100; i >= 5; i -= 5) {
+    console.log('countdown by 5s: ' + i);
+}
