@@ -78,7 +78,7 @@
     // Exercise 11
     // Create a function that returns the type of the value you enter in the input parameter of the function
 
-    function checkType(aValue){
+    function checkType(aValue) {
         return typeof aValue;
     }
 
@@ -89,23 +89,23 @@
     // Exercise 12
     // Create a function that takes in an array of values and console.logs the data type of each.
 
-    function checkTypes(anArray){
+    function checkTypes(anArray) {
 
-        for(var x = 0; x < anArray.length; x++ ){
+        for (var x = 0; x < anArray.length; x++) {
             // console.log('x: '+ x);
-            console.log( checkType(anArray[x]) );
+            console.log(checkType(anArray[x]));
         }
 
     }
 
-    checkTypes([2,'Fer', false]);
+    checkTypes([2, 'Fer', false]);
     checkTypes([10]);
 
     /* ------------------------------------------------- */
     // Exercise 13
     // Write a function called isString that accepts a single input, and returns true if the data type is a string or false if it is not a string
 
-    function isString(item){
+    function isString(item) {
         return checkType(item) === "string";
     }
 
@@ -125,7 +125,7 @@
 
     // Exercise 15
     // Create a function that generates and returns a random number between 0 and 10
-    function getRandomNumber(){
+    function getRandomNumber() {
         return Math.floor(Math.random() * 17);
     }
 
@@ -134,7 +134,7 @@
     // Exercise 16
 
     // Create an array with your classmates names in it.
-    var classmatesArray = ["Evelyn","Emily","Esai","Jacob","Ramon","Moriah","Roshan","Nayoung","DeLayne","Sung","Val","Sarah","Ron","Rex","Ry","Tyler"];
+    var classmatesArray = ["Evelyn", "Emily", "Esai", "Jacob", "Ramon", "Moriah", "Roshan", "Nayoung", "DeLayne", "Sung", "Val", "Sarah", "Ron", "Rex", "Ry", "Tyler"];
 
     console.log('classmatesArray', classmatesArray);
     // Exercise 17
@@ -150,10 +150,33 @@
     // Create a function that prints a list of names randomly from the apex array
     // TODO: getRandomNumber should get a number between 0 and 15
     // TODO: Make sure that there is no duplicates
-    function generateMicrowaveList(){
-        for (var x = 0; x < classmatesArray.length; x++){
-            console.log('Index: ' + x + ' ' + getRandomItem(classmatesArray));
-        }
+
+    function getRandomFromRange(min, max) {
+        return Math.floor(Math.random() * (max - min) + min);
+    }
+
+    function generateMicrowaveList() {
+
+        // Clones the array into a new var
+        var remainingClassmates = classmatesArray.slice();
+
+        // Loop thru the 16 original students
+        classmatesArray.forEach(function (element, index) {
+
+            // Creating a random between 0 and what students we have left
+            var randomNumber = getRandomFromRange(0, remainingClassmates.length);
+            // Get the random student from the remainingClassmates array
+            var classmateRemoved = remainingClassmates[randomNumber];
+
+            // Pretty msg
+            console.log( (index+1)  + ': ' + classmateRemoved + ' goes next');
+
+            // Looking for the index of the classmateRemoved and delete it
+            remainingClassmates.splice(
+                remainingClassmates.indexOf(classmateRemoved), // index of the student to be removed
+                1 // the amount of items I want to remove
+            );
+        });
     }
 
     generateMicrowaveList();
