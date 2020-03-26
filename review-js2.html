@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+
+    // elevators
+    var tallTower = ["B2", "B1","Lobby","F1", "F2", "F3", "F4", "Deck Pool"];
+    var shortTower = ["B1","Lobby","F1"];
+
+    // take the elevator from the bottom to the top
+    shortTower.forEach(function(floor, index){
+        // Lobby is unavailable
+        if(index === 1){
+            return;
+        }
+        console.log('floor', floor);
+        console.log('index', index);
+    });
+
+    // The tall tower needs to go from the deck pool to B1, the elevator will skip the F3 floor
+    for(var currentFloor = tallTower.length-1; currentFloor > 0; currentFloor--){
+
+        if("F3" === tallTower[currentFloor]){
+            continue;
+        }
+
+        console.log(tallTower[currentFloor]);
+
+    }
+
+    var train = ["empty", "empty", "empty", "empty", "empty"];
+
+    function getRandomFromRange(min, max) {
+        return Math.floor(Math.random() * (max - min) + min);
+    }
+
+    var numberOfPeopleWaiting = getRandomFromRange(1, 10);
+    console.log('numberOfPeopleWaiting', numberOfPeopleWaiting);
+
+    for(var index = 0; index < train.length; index++){
+
+        // there has to be an empty seat and there has to be someone to take it
+        if( train[index] === "empty" && numberOfPeopleWaiting !== 0){
+            // there is a seat available
+            train[index] = "taken";
+            numberOfPeopleWaiting--;
+        }
+    }
+
+    console.log(train);
+    console.log('numberOfPeopleWaiting after the train',numberOfPeopleWaiting);
+
+
+
+</script>
+
+</body>
+</html>
