@@ -13,10 +13,15 @@
     var cars = [];
 
     var ferCar = {
-        make: "Toyota",
-        model: "Camry",
+        make: "Nissan",
+        model: "Maxima",
         price: 25000,
-        year: 2014
+        year: 2014,
+        features: ["Automatic Windows", "Bluetooth Connectivity", "GPS Navigation"],
+        owner: {
+            name: "Fernando Mendoza",
+            age: 29
+        }
     };
 
     var douglasCar = {
@@ -26,11 +31,16 @@
         year: 2015
     };
 
+    // this info came from a form submit
+    douglasCar.features = ["Automatic Windows", "Great Gas Mileage", "AM/FM Radio"];
+    douglasCar["owner"] = {name: prompt("Who's the owner?"), age: prompt("How old is owner?")};
+
     cars.push(ferCar);
     cars.push(douglasCar);
 
-    console.log(ferCar.make + " " + ferCar.model + " cost = " + ferCar.price);
-    console.log(douglasCar.make + " " + douglasCar.model + " cost = " + douglasCar.price);
+    cars.forEach(function(aCar){
+        console.log(aCar.make + " " + aCar.model + " cost = $" + aCar.price + " " + aCar.features + " " + aCar.owner.name + " " + aCar.owner.age);
+    });
 
 
 </script>
