@@ -62,8 +62,37 @@
 
         // test the honking feature:
         currentCar.honk();
-    });
+    })
 
+     // 2nd example
+    var ferContact = {
+        name: "fer mendoza",
+        phoneNumber: "3424234252345"
+    };
+
+    var aContact = {
+        name: prompt("Name?"),
+        phoneNumber: prompt("Number?")
+    };
+
+    var phone = {
+        screenSize: 5.1,
+        price: 500.99,
+        brand: "Apple",
+        color: "blue",
+        storageSize: 128,
+        contacts: [ferContact, aContact],
+        call: function(number){
+            console.log("calling: " + number);
+        }
+    };
+
+    // print the name of the first contact
+    console.log(phone.contacts[0].name);
+    console.log(phone.contacts[0].phoneNumber);
+
+    // make a call to the second contact
+    phone.call(phone.contacts[1].phoneNumber);
 
 </script>
 
