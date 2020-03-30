@@ -10,7 +10,7 @@
 
     "use strict";
 
-    var cars = [];
+    var inventory = [];
 
     var ferCar = {
         make: "Nissan",
@@ -21,6 +21,12 @@
         owner: {
             name: "Fernando Mendoza",
             age: 29
+        },
+        honk: function (){
+            alert("Honk!!!");
+        },
+        computerLog: function(){
+            console.log("--- " + this.make + " --- " + this.model + " ---");
         }
     };
 
@@ -34,12 +40,28 @@
     // this info came from a form submit
     douglasCar.features = ["Automatic Windows", "Great Gas Mileage", "AM/FM Radio"];
     douglasCar["owner"] = {name: prompt("Who's the owner?"), age: prompt("How old is owner?")};
+    douglasCar.honk = function(){
+        alert("Honk!");
+    };
+    douglasCar.computerLog = function(){
+        console.log("--- " + this.make + " --- " + this.model + " ---");
+    };
 
-    cars.push(ferCar);
-    cars.push(douglasCar);
+    inventory.push(ferCar);
+    inventory.push(douglasCar);
 
-    cars.forEach(function(aCar){
+    inventory.forEach(function(aCar){
         console.log(aCar.make + " " + aCar.model + " cost = $" + aCar.price + " " + aCar.features + " " + aCar.owner.name + " " + aCar.owner.age);
+    });
+
+
+    // Run tests on the car
+    inventory.forEach(function(currentCar){
+        // Get the computerLog
+        currentCar.computerLog();
+
+        // test the honking feature:
+        currentCar.honk();
     });
 
 
