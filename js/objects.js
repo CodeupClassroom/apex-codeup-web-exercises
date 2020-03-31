@@ -95,6 +95,50 @@
      * > console.log(books[0].author.lastName) // "Adams"
      */
 
+    var books = [
+        {
+            title: "Garfield at Large: His First Book",
+            author: {
+                firstName: "Jim",
+                lastName: "Davis"
+            }
+        },
+        {
+            title: "The Hunchback of Notre-Dame",
+            author: {
+                firstName: "Victor",
+                lastName: "Hugo"
+            }
+        },
+        {
+            title: "1992 Information Please Sports Almanac",
+            author: {
+                firstName: "Mike",
+                lastName: "Meserole"
+            }
+        },
+        {
+            title: "Life is Too Short",
+            author: {
+                firstName: "Mickey",
+                lastName: "Rooney"
+            }
+        },
+        {
+            title: "How To Draw Manga",
+            author: {
+                firstName: "Katy",
+                lastName: "Coope"
+            }
+        }, {
+            title: "The Cosmic Serpent",
+            author: {
+                firstName: "Jeremy",
+                lastName: "Narby"
+            }
+        }
+    ];
+
     /**
      * TODO:
      * Loop through the books array and output the following information about
@@ -120,6 +164,17 @@
      *      ...
      */
 
+    books.push( createBook("The Salmon of Doubt", "Douglas Adams") );
+    books.push( createBook("Walkaway", "Cory Doctorow") );
+    books.push( createBook("A Brief History of Time", "Stephen Hawking") );
+    books.push( createBook("Harry Potter", "JK Rowling"));
+
+    books.forEach(function(book, index){
+        console.log("Book # " + (index + 1));
+        showBookInfo(book);
+        console.log("---");
+    });
+
     /**
      * Bonus:
      * - Create a function named `createBook` that accepts a title and author
@@ -130,5 +185,21 @@
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
+
+    function createBook(aTitle, authorName){
+        var names = authorName.split(" ");
+        return {
+            title: aTitle,
+            author: {
+                firstName: names[0],
+                lastName: names[1]
+            }
+        };
+    }
+
+    function showBookInfo(book){
+        console.log("Title: " + book.title);
+        console.log("Author: " + book.author.firstName + " " + book.author.lastName);
+    }
 
 })();
