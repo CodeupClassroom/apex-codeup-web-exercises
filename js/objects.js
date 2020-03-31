@@ -68,14 +68,18 @@
     ];
 
     shoppers.forEach(function(shopper){
+
+        var discountedPrice = shopper.amount;
+        var discount = 0;
+
         if(shopper.amount > 200){
             // get a discount
-            var discountedPrice = 0.88 * shopper.amount;
-            console.log(shopper.name + " amount: $" + shopper.amount + " discount: 12% $" + discountedPrice);
-        } else {
-            // you don't get a discount
-            console.log(shopper.name + " amount: $" + shopper.amount + " discount: 0% $" + shopper.amount);
+            discount = 12;
+            discountedPrice = 0.88 * shopper.amount;
         }
+
+        console.log("Shopper: " + shopper.name + " amount: $" + shopper.amount + " discount: "+discount+"% $" + discountedPrice);
+
     });
 
     /** TODO:
