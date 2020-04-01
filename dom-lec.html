@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Arrays in JS</title>
+    <link href="https://fonts.googleapis.com/css?family=Lekton" rel="stylesheet">
+    <style>
+        body {
+            background-color: darkslategrey;
+            color: burlywood;
+            font-family: 'Lekton', sans-serif;
+        }
+
+        .grandpa {
+            background-color: brown;
+            height: 8.85em;
+            width: 65.73em;
+            box-shadow: 4px 4px 9px black;
+        }
+
+        .dad {
+            background-color: chocolate;
+            display: inline-block;
+            height: 7.25em;
+        }
+
+        .son {
+            background-color: peru;
+            display: inline-block;
+            height: 7.25em;
+            position: relative;
+            top: .75em;
+            left: .75em;
+        }
+
+        h1 {
+            position: relative;
+            display: inline-block;
+            background-color: burlywood;
+            margin: 0;
+            font-size: 6em;
+            top: .125em;
+            left: .125em;
+            padding: 10px 10px 12px 10px;
+            color: darkslategrey;
+        }
+
+        .circle {
+            border-radius: 50%;
+            box-shadow: 4px 4px 9px black;
+        }
+
+        .grandma {
+            height: 400px;
+            width: 400px;
+            background: url("img/jupiter.webp");
+            background-size: cover;
+            position: absolute;
+            bottom: 12px;
+            right: 20px;
+        }
+
+        .daughter {
+            height: 120px;
+            width: 120px;
+            background: chocolate;
+            position: absolute;
+            bottom: 90px;
+            right: 420px;
+        }
+
+        .grand-daughter {
+            height: 70px;
+            width: 70px;
+            background: brown;
+            position: absolute;
+            bottom:-80px;
+            right: -50px;
+        }
+        input {
+            background: darkslategrey;
+            border: 0 solid transparent;
+            border-bottom: 2px solid burlywood;
+            margin-top: 20px;
+            color: burlywood;
+            font-size: 1.5em;
+            font-family: 'Lekton', sans-serif;
+        }
+
+    </style>
+</head>
+<body>
+<div class="grandpa">
+    <div class="dad">
+        <div class="son">
+            <h1 id="header"></h1>
+        </div>
+    </div>
+</div>
+
+<p id="little-text">Don't get distracted by the dots.</p>
+
+<form name="login" action="">
+    <div>
+        <label for="username">Username: </label>
+        <input type="text" name="username" id="username">
+    </div>
+    <div>
+        <label for="password">Password: </label>
+        <input type="password" id="password" name="password">
+    </div>
+    <button id="login-btn">LOGIN</button>
+</form>
+<ul>
+    <li data-dbid="123">Item one</li>
+    <li data-dbid="234">Item two</li>
+</ul>
+
+<div id="jupiter" class="circle grandma">
+    <div class="circle mom">
+        <div class="circle daughter">
+            <div class="circle grand-daughter"></div>
+        </div>
+    </div>
+</div>
+<script src="js/dom-lec.js"></script>
+</body>
+</html>
