@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis est fugiat ipsa, magnam obcaecati quis quisquam rem repellat, rerum sequi temporibus voluptate? Cumque doloribus neque odio reiciendis reprehenderit sint vero?</p>
+
+<button id="change-bg">Change Background</button>
+<button id="change-text">Change Text Color</button>
+<button id="reset">Reset</button>
+<button id="break-everything">Break reset button</button>
+
+<script>
+    "use strict";
+    var btnBg = document.getElementById("change-bg");
+    var resetBtn = document.querySelector("#reset");
+    var breakBtn = document.querySelector("#break-everything");
+
+    var resetListener = function(){
+        document.body.style.backgroundColor = "white";
+        document.body.style.color = "black";
+    };
+
+    btnBg.addEventListener('click', function(){
+        console.log("click is working");
+        document.body.style.backgroundColor = "teal";
+    });
+
+    document.getElementById("change-text").addEventListener('click', function(){
+        console.log("click is working for change-text btn");
+        document.body.style.color = "white";
+    });
+
+    resetBtn.addEventListener("click", resetListener);
+
+    breakBtn.addEventListener("click", function(){
+        resetBtn.removeEventListener("click", resetListener);
+        console.log("resetBtn is broken now");
+    });
+
+</script>
+
+</body>
+</html>
