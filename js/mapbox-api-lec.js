@@ -99,17 +99,31 @@ mapboxgl.accessToken = mapboxToken;
 
 // TODO TOGETHER: Using the Geocoder helper function, log the coordinates of Codeup and recenter the map to focus on Codeup. Comment out previous map code.
 
-geocode("701 Commerce St. Dallas, TX. 75202", mapboxToken).then(function(result) {
-   console.log(result);
+// geocode("701 Commerce St. Dallas, TX. 75202", mapboxToken).then(function(result) {
+//    console.log(result);
+//     var map = new mapboxgl.Map({
+//         container: 'map',
+//         style: 'mapbox://styles/mapbox/streets-v9',
+//         zoom: 16
+//     });
+//     //Right here add the code from the Todos below.
+//     map.setCenter(result);
+//     //map.jumpTo({center: result});
+//     //map.flyTo({center: result});
+// });
+
+geocode("701 Commerce St, Dallas, TX. 75202", mapboxToken).then(function(result) {
+    console.log(result);
     var map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v9',
-        center: result,
         zoom: 16
     });
+    //Right here add the code from the Todos below.
+    map.setCenter(result);
+    //map.jumpTo({center: result});
+    //map.flyTo({center: result});
 });
-
-
 
 //TODO: Using the geocode method above, add a marker at Codeup to the map
 //TODO: Instead of setCenter try using map.jumpTo()
@@ -119,6 +133,9 @@ geocode("701 Commerce St. Dallas, TX. 75202", mapboxToken).then(function(result)
 
 // TODO TOGETHER: Reverse Geocoding: Using the reverse geocoding method, enter the coordinates {lng: -96.8084, lat: 32.7799} to get a physical address for the Sixth Floor Museum
 
+reverseGeocode({lng: -96.8084, lat: 32.7799}, mapboxToken).then(function(result){
+   console.log('reverseGeocode: ' + result);
+});
 
 
 // TODO: Reverse geocode coordinates of your choice using the reverse geocode method
