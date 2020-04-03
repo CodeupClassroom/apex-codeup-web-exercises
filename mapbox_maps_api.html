@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mapbox Exercise</title>
+    <!-- Mapbox CSS -->
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        #map {
+            width: 100%;
+            height: 700px;
+        }
+
+        .best {
+            font-size: 2em;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<h1>My First Mapbox map!</h1>
+<select id="zoom-select">
+    <option selected disabled>Zoom Level</option>
+    <option value="5">Zoom Level 5</option>
+    <option value="9">Zoom Level 9</option>
+    <option value="15">Zoom Level 15</option>
+    <option value="20">Zoom Level 20</option>
+</select>
+<div id="map"></div>
+
+<script src='https://api.mapbox.com/mapbox-gl-js/v1.9.0/mapbox-gl.js'></script>
+
+<script src="js/keys.js"></script>
+<script src="js/mapbox-geocoder-utils.js"></script>
+<script>
+    mapboxgl.accessToken = mapboxToken;
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v9',
+        zoom: 9,
+        center: [-96.798685, 32.781214]
+    });
+
+    //Yes we can set the zoom programmatically.
+    //map.setZoom(20);
+
+    var restaurantArray = [
+        {
+            address: "4350 Belt Line Rd, Addison, TX 75001",
+            popupHTML: "<p>Osaka Sushi Grill<br>4350 Belt Line Rd, Addison, TX 75001</p>"
+        },
+        {
+            address: "8580 TX-121, Frisco, TX 75034",
+            popupHTML: "<p>Buca di Beppo Italian Restaurant<br>8580 TX-121, Frisco, TX 75034</p>"
+        },
+        {
+            address: "1520 Elm St #111, Dallas, TX 75201",
+            popupHTML: "<p>Campisi's Restaurants | Downtown Dallas<br>1520 Elm St #111, Dallas, TX 75201</p>"
+        },
+        {
+            address: "944 E Copeland Rd, Arlington, TX 76011",
+            popupHTML: "<p>Asian Buffet<br>944 E Copeland Rd, Arlington, TX 76011</p>"
+        },
+        {
+            address: "3726 Towne Crossing Blvd, Mesquite, TX 75150",
+            popupHTML: "<p>Snuffer's<div class='best'>Home of the best Cheese Fries</div>3726 Towne Crossing Blvd, Mesquite, TX 75150</p>"
+        }
+    ];
+
+    restaurantArray.forEach(function(restaurant){
+        console.log(restaurant);
+        geocode(restaurant.address, mapboxToken).then(function(coordinates){
+            var marker = new mapboxgl.Marker()
+                .setLngLat(coordinates)
+                .addTo(map);
+
+            var popup = new mapboxgl.Popup()
+                .setHTML(restaurant.popupHTML);
+
+            marker.setPopup(popup);
+        });
+    });
+
+    var zoomSelect = document.getElementById('zoom-select');
+    console.log(zoomSelect);
+
+    zoomSelect.addEventListener('change', function(){
+       console.log('Zoom level change.');
+       var zoomValue = zoomSelect.options[zoomSelect.selectedIndex].value;
+
+        map.setZoom(zoomValue);
+    });
+</script>
+</body>
+</html>
