@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Konami Code</title>
+</head>
+<body>
+<h1>Konami Code</h1>
+<audio id="activatedAudio">
+    <source src="media/robot-voice-activated.m4a" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+<script src="js/jquery.js"></script>
+<script>
+    "use strict";
+
+    var keys = [];
+    var konamiKeys = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
+    $(document).keyup(function(event){
+        //Add the new key to the end of the array.
+        keys.push(event.keyCode);
+
+        //Only keep the last 10 key strokes.
+        keys = keys.slice(-10);
+        console.log(keys);
+
+        //Compare konamiKeys to the keys entered.
+        console.log(keys.join('') + ' ' + konamiKeys.join(''));
+        if(keys.join('') === konamiKeys.join('')) {
+            //Play our activated audio.
+            $('#activatedAudio')[0].play();
+
+            //alert('Konami code activated. 30 lives!');
+            $('body').css('background-color', 'red');
+            $('body').css('color', 'white');
+            $('body').css('transition', 'background-color 1s');
+
+            //Revert back after a couple seconds.
+            setTimeout(function () {
+                $('body').css('background-color', 'white');
+                $('body').css('color', 'black');
+            }, 2000)
+        }
+    });
+</script>
+</body>
+</html>
