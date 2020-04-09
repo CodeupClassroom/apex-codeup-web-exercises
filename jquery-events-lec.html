@@ -18,6 +18,8 @@
     <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, molestiae?
     </p>
+
+    <input type="text" id="name">
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <script>
         console.log($('#header'));
@@ -67,6 +69,32 @@
 
            $('p').hover(inParagraphHandler, outParagraphHandler);
 
+           //Keydown notifies when any key is pressed down.
+           $('#name').keydown(function(){
+               console.log('Keydown');
+           })
+
+            //Keypress only notifies us when a non-modifier (cmd, control, shift) key is pressed.
+            $('#name').keypress(function(){
+               console.log('keypress')
+            });
+
+           //Keyup triggers whenever any key on the keyboard is released.
+           $('#name').keyup(function(){
+               console.log('keyup');
+           });
+
+            $('p').on('click', function(){
+                console.log('Using on to add a click event handler.');
+            });
+
+            $('#name').on('keyup', function(){
+                console.log('Keyup event created with the on method.');
+            });
+
+            //Example of removing all events with one call to jQuery's off method.
+            //$('#name').off()
+            //$('p').off();
         })
     </script>
 </body>
