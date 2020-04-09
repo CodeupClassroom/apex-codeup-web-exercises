@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Exercises</title>
+</head>
+<body>
+<div class="header" id="codeup">
+    <h1>Hello jQuery</h1>
+    <h1>Hello Codeup</h1>
+</div>
+<div class="content" id="content">
+    <p id="p1" class="codeup">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, quidem!</p>
+    <p id="p2" class="codeup">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis inventore magnam molestiae molestias nisi quae quam saepe sit. Harum, tempora!</p>
+    <p id="p3" class="paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A asperiores autem dicta eius eum excepturi facilis illo ipsa labore modi mollitia neque nihil numquam perspiciatis quibusdam quod sit totam, voluptatem.</p>
+</div>
+
+<ul class="todo" id="todo-list">
+    <li id="todo1" class="list-item">Item 1</li>
+    <li id="todo2" class="list-item">Item 2</li>
+    <li id="todo3" class="list-item">Item 3</li>
+</ul>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script>
+
+    $(document).ready(function () {
+        console.log('I am ready!');
+        //alert($('#content').html());
+        //alert($('#todo-list').html());
+        //$('.codeup').css('border', '1px solid red');
+        $('li').css('font-size', '20px');
+        $('li').css('background-color', 'yellow');
+        $('h1').css('background-color', 'yellow');
+        $('p').css('background-color', 'yellow');
+        alert($('h1').text());
+
+        $('li, h1, p').css('background-color', 'teal');
+    });
+</script>
+</body>
+</html>
