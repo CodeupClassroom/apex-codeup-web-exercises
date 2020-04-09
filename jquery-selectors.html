@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Selectors</title>
+    <style>
+        .important {
+            background-color: teal;
+        }
+
+        /** {*/
+        /*    border: 1px solid red;*/
+        /*}*/
+    </style>
+</head>
+<body>
+    <h1 id="codeup">Hello Codeup</h1>
+    <div class="important">
+        <h3>NOTICE</h3>
+        <p>This is an important message!</p>
+    </div>
+    <div class="not-important">
+        <h2>Lorem Ipsum</h2>
+        <p>
+            Lorem ipsum dolor sit amet, incididunt ut <span class="important">labore et dolore magna aliqua.</span>, quis ut aliquip ex ea commodo.
+        </p>
+    </div>
+    <p class="important">This is also very important.</p>
+
+    <button id="aButton">Click Me</button>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script>
+
+    $(document).ready(function () {
+        console.log('We are ready for selectors.');
+        console.log($('#codeup'));
+        //Use jQuery to get the html contents of an element.
+        console.log('Using jQuery', $('#codeup').html());
+        console.log('Vanilla JS', document.querySelector('#codeup').innerHTML);
+
+        //Select elements using class selector.
+        console.log($('.important'));
+        $('.important').css('background-color', 'yellow');
+
+        //Select elements using element selectors.
+        $('p').css('font-size', '2em');
+        $('h3').css('background-color', 'red');
+
+        //Using jQuery in an event listener to change the background color.
+        document.querySelector('#aButton').addEventListener('click' ,function () {
+            $('p').css('background-color', 'blue');
+        });
+
+        $('.important, p').css('background-color', 'green');
+        console.log($('.important, p'));
+
+        //Use the all selector to give all elements a border.
+        $('*').css('border', '1px solid blue');
+    });
+
+</script>
+</body>
+</html>
