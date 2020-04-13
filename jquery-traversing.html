@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Traversing</title>
+    <style type="text/css">
+
+        #red.circle {
+            background-color: red;
+        }
+
+        #orange.circle {
+            background-color: darkorange;
+        }
+
+        #yellow.circle {
+            background-color: #FACE0A;
+        }
+
+        #green.circle {
+            background-color: #8cd63d;
+        }
+
+        #blue.circle {
+            background-color: darkblue;
+        }
+
+        #purple.circle {
+            background-color: rebeccapurple;
+        }
+
+        .circle {
+            width: 70px;
+            height: 70px;
+            border-radius: 35px;
+            margin-left: 15px;
+        }
+        .circles {
+            width: 80%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h3>National Parks</h3>
+    <ul id="national-parks">
+        <li>Arches</li>
+        <li>Badlands</li>
+        <li>Carlsbad Caverns</li>
+        <li>Denali</li>
+        <li>Everglades</li>
+    </ul>
+    <h3>State Parks of Texas</h3>
+    <ul id="state-parks-texas">
+        <li>Abilene</li>
+        <li>Big Bend</li>
+        <li>Choke Canyon</li>
+        <li>Davis Mountains</li>
+        <li>Enchanted Rock</li>
+    </ul>
+    <div class="circles">
+        <div id="red" class="circle"></div>
+        <div id="orange" class="circle"></div>
+        <div id="yellow" class="circle"></div>
+        <div id="green" class="circle"></div>
+        <div id="blue" class="circle"></div>
+        <div id="purple" class="circle"></div>
+    </div>
+    <script src="js/jquery.js" ></script>
+    <script>
+        $(document).ready(function(){
+            console.log("DOM is ready");
+
+            var nationalParksLIs = $('#national-parks li');
+
+            nationalParksLIs.each(function (index, element) {
+                console.log('each: ' + index, element);
+                console.log('this inside each: ', this);
+
+                $(this).css('border', '1px solid black');
+            });
+
+            var circles = $('.circle');
+
+            circles.each(function(index){
+                console.log('circles: ' + index, this);
+                $(this).css('border', '1px solid black');
+            });
+
+            console.log('First item using square brackets: ', circles[0]);
+
+            //remove the border of the first circle.
+            circles.first().css('border', 'none');
+            //remove the border of the first li.
+            nationalParksLIs.first().css('border', 'none');
+
+            //Set the display to none for the last element.
+            //circles.last().css('display', 'none');
+            //Change the background color of the last element.
+            nationalParksLIs.last().css('background-color', 'lightgreen');
+
+            var stateParks = $('#state-parks-texas');
+            $('.circles').children().css('border', 'none');
+            stateParks.children().each(function(){
+                var element = $(this);
+                console.log('Items in state parks list: ' + element.text());
+
+                if(element.text() === 'Enchanted Rock'){
+                    element.css('background-color', 'lightblue')
+                }
+            });
+
+            stateParks.children().click(function(){
+                console.log(this);
+                $(this).parent().css('background-color', 'lightgray')
+            });
+
+            circles.click(function(){
+                console.log($(this).next());
+                $(this).next().css('border', '2px solid black')
+            });
+
+        });
+    </script>
+</body>
+</html>
