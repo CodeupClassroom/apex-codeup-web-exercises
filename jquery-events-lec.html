@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Events</title>
+</head>
+<body>
+    <h1 id="header">jQuery Events</h1>
+
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, molestiae?
+    </p>
+
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, molestiae?
+    </p>
+
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, molestiae?
+    </p>
+
+    <input type="text" id="name">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script>
+        console.log($('#header'));
+
+        //Using vanilla JS.
+        // document.getElementById('header').addEventListener('click', function () {
+        //     console.log('header was clicked');
+        // });
+
+        $(document).ready(function () {
+           $('#header').click(function () {
+               console.log('From inside query click event handler: header was clicked');
+           });
+
+           $('p').click(function () {
+               console.log('A paragraph was clicked.')
+           })
+
+           $('#header').dblclick(function () {
+               $('#header').css('background-color', 'teal')
+           });
+
+           var paragraphDoubleClickHandler = function() {
+               console.log('double click handler');
+               $('p').css('color', 'blue');
+           };
+
+           $('p').dblclick(paragraphDoubleClickHandler);
+
+           var inHandler = function() {
+               $('#header').css('background-color', 'red');
+           };
+
+           var outHandler = function() {
+               $('#header').css('background-color', 'white');
+           };
+
+           $('#header').hover(inHandler, outHandler);
+
+           var inParagraphHandler = function () {
+               $('p').css('background-color', 'teal');
+           };
+
+           var outParagraphHandler = function () {
+               $('p').css('background-color', 'white');
+           };
+
+           $('p').hover(inParagraphHandler, outParagraphHandler);
+
+           //Keydown notifies when any key is pressed down.
+           $('#name').keydown(function(){
+               console.log('Keydown');
+           })
+
+            //Keypress only notifies us when a non-modifier (cmd, control, shift) key is pressed.
+            $('#name').keypress(function(){
+               console.log('keypress')
+            });
+
+           //Keyup triggers whenever any key on the keyboard is released.
+           $('#name').keyup(function(){
+               console.log('keyup');
+           });
+
+            $('p').on('click', function(){
+                console.log('Using on to add a click event handler.');
+            });
+
+            $('#name').on('keyup', function(){
+                console.log('Keyup event created with the on method.');
+            });
+
+            //Example of removing all events with one call to jQuery's off method.
+            //$('#name').off()
+            //$('p').off();
+        })
+    </script>
+</body>
+</html>

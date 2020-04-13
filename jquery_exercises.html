@@ -6,7 +6,7 @@
 </head>
 <body>
 <div class="header" id="codeup">
-    <h1>Hello jQuery</h1>
+    <h1 id="hello-jquery-header">Hello jQuery</h1>
     <h1>Hello Codeup</h1>
 </div>
 <div class="content" id="content">
@@ -28,13 +28,27 @@
         //alert($('#content').html());
         //alert($('#todo-list').html());
         //$('.codeup').css('border', '1px solid red');
-        $('li').css('font-size', '20px');
-        $('li').css('background-color', 'yellow');
-        $('h1').css('background-color', 'yellow');
-        $('p').css('background-color', 'yellow');
-        alert($('h1').text());
+        // $('li').css('font-size', '20px');
+        // $('li').css('background-color', 'yellow');
+        // $('h1').css('background-color', 'yellow');
+        // $('p').css('background-color', 'yellow');
+        // alert($('h1').text());
+        //
+        // $('li, h1, p').css('background-color', 'teal');
 
-        $('li, h1, p').css('background-color', 'teal');
+        $('#hello-jquery-header').click(function () {
+            $('#hello-jquery-header').css('background-color', 'lightblue');
+        });
+
+        $('p').dblclick(function () {
+            $('p').css('font-size', '18px');
+        });
+
+        $('li').hover(function () {
+            $('li').css('color', 'red');
+        }, function () {
+            $('li').css('color', 'black');
+        });
     });
 </script>
 </body>
