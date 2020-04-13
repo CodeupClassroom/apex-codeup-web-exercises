@@ -64,6 +64,12 @@
         $('#display-dd').click(function(event){
             event.preventDefault();
             $('dd').toggleClass('invisible');
+            // console.log($('dd')[0].attr('class'));
+            if($('dd')[0].className  !== 'invisible'){
+                $(this).text('Hide definitions')
+            }else{
+                $(this).text('Show definitions')
+            }
         });
 
         $('dt').click(function(){
