@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery FAQ</title>
+    <style>
+        .invisible {
+            visibility: hidden;
+        }
+        .highlight {
+            background-color: yellow;
+            font-weight: bolder;
+        }
+
+        dt {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<a href="/" id="display-dd">Show definitions</a>
+
+<dl>
+    <dt>Lorem Park</dt>
+    <dd class="invisible">Something something, blah blah.</dd>
+
+    <dt>Ipsum Lake</dt>
+    <dd class="invisible">.halb halb, gnihtemos gnihtemoS</dd>
+
+    <dt>Computer Park</dt>
+    <dd class="invisible">Look at all those Gateways...</dd>
+
+    <dt>Boiler Plate</dt>
+    <dd class="invisible">This might be a bit plain...</dd>
+
+    <dt>Schmear Geyser</dt>
+    <dd class="invisible">Get your bagels, my dudes.</dd>
+
+    <dt>Dab On 'Em Cliff</dt>
+    <dd class="invisible">Cam Newton's fault, probably.</dd>
+
+    <dt>Astrodome</dt>
+    <dd class="invisible">Houston baseball park.</dd>
+
+    <dt>Texas Cyclone</dt>
+    <dd class="invisible">Was a cool roller coaster.</dd>
+
+    <dt>My Aunt Pam's House</dt>
+    <dd class="invisible">They have a pomeranian.</dd>
+
+    <dt>Jellystone National Park</dt>
+    <dd class="invisible">Yogi lives there.</dd>
+</dl>
+
+<script
+        src="https://code.jquery.com/jquery-3.4.1.slim.js"
+        integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI="
+        crossorigin="anonymous">
+</script>
+<script>
+    $(document).ready(function(){
+
+        $('#display-dd').click(function(event){
+            event.preventDefault();
+            $('dd').toggleClass('invisible');
+            // console.log($('dd')[0].attr('class'));
+            if($('dd')[0].className  !== 'invisible'){
+                $(this).text('Hide definitions')
+            }else{
+                $(this).text('Show definitions')
+            }
+        });
+
+        $('dt').click(function(){
+            $(this).toggleClass('highlight');
+        });
+
+    });
+</script>
+</body>
+</html>
