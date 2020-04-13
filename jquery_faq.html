@@ -7,6 +7,14 @@
         .invisible {
             visibility: hidden;
         }
+        .highlight {
+            background-color: yellow;
+            font-weight: bolder;
+        }
+
+        dt {
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -52,10 +60,16 @@
 </script>
 <script>
     $(document).ready(function(){
+
         $('#display-dd').click(function(event){
             event.preventDefault();
             $('dd').toggleClass('invisible');
         });
+
+        $('dt').click(function(){
+            $(this).toggleClass('highlight');
+        });
+
     });
 </script>
 </body>
