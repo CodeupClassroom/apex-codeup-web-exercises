@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Attributes</title>
+    <style>
+        #robot-img{
+            width: 20%;
+        }
+    </style>
+</head>
+<body>
+
+<button id="zoom-in">+</button>
+
+<div id="grades-table">
+    <p>placeholder</p>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function () {
+        var $gradeTable = $('#grades-table');
+
+        $gradeTable.html('<img id="robot-img" src="https://github.githubassets.com/images/modules/site/home-illo-team.svg" alt="">');
+
+        var $robot = $('#robot-img');
+        // Using .css() as a getter
+        var currentWidth = 0;
+        var totalOfPx = 0;
+        var increasePx = 0;
+
+        $('#zoom-in').click(function(){
+
+            currentWidth = parseFloat($robot.css('width'));
+            totalOfPx = currentWidth * 5;
+            increasePx =  totalOfPx * 0.05;
+
+            console.log('new size' ,(currentWidth + increasePx + 'px'));
+            // Using .css() as a setter
+            $robot.css('width', (currentWidth + increasePx + 'px') );
+        });
+
+
+    });
+</script>
+</body>
+</html>
