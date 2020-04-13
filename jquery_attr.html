@@ -26,21 +26,15 @@
 
         var $robot = $('#robot-img');
         // Using .css() as a getter
-        var currentWidth = 0;
-        var totalOfPx = 0;
-        var increasePx = 0;
+        var currentWidth = parseFloat($robot.css('width')); //  266
+        var totalOfPx = currentWidth * 5; // 1330
+        var increasePx = totalOfPx * 0.05; // 66.5
 
         $('#zoom-in').click(function(){
-
-            currentWidth = parseFloat($robot.css('width'));
-            totalOfPx = currentWidth * 5;
-            increasePx =  totalOfPx * 0.05;
-
-            console.log('new size' ,(currentWidth + increasePx + 'px'));
+            currentWidth = parseFloat($robot.css('width')); // 266
             // Using .css() as a setter
             $robot.css('width', (currentWidth + increasePx + 'px') );
         });
-
 
     });
 </script>
