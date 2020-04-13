@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Attributes</title>
+    <style>
+
+        body {
+            background-color: white;
+            color:black;
+        }
+
+        #robot-img{
+            width: 20%;
+        }
+
+        #grades-table {
+            width: 50%;
+            height: 500px;
+            background-color: #30447A;
+        }
+
+        .hidden {
+            visibility: hidden;
+        }
+
+        .show {
+            font-weight: bolder;
+            visibility: visible;
+        }
+
+        .dark-theme {
+            background-color: black;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias consequuntur, dolorum impedit mollitia praesentium reiciendis sint. Amet architecto consequatur cum ducimus eligendi maxime minima perferendis, quod totam veniam. Animi, iusto!</p>
+
+<button id="zoom-in">+</button>
+<button id="reset">reset</button>
+<button id="toggle-theme">Dark mode</button>
+<p id="control-alert" class="alert hidden">placeholder</p>
+<div id="grades-table"></div>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function () {
+        var $gradeTable = $('#grades-table');
+        var $alertP = $('#control-alert');
+
+        // using .html() as a setter
+        $gradeTable.html('<img id="robot-img" src="https://github.githubassets.com/images/modules/site/home-illo-team.svg" alt="">');
+
+        var $robot = $('#robot-img');
+        // Using .css() as a getter
+        var currentWidth = parseFloat($robot.css('width')); //  266
+        var totalOfPx = currentWidth * 5; // 1330
+        var increasePx = totalOfPx * 0.05; // 66.5
+
+        $('#zoom-in').click(function(){
+            // setters for classes
+            $alertP.removeClass('hidden');
+            $alertP.addClass('show');
+            $alertP.text('Zoom increased by 5%');
+
+            // Using .css() as a getter
+            currentWidth = parseFloat($robot.css('width'));
+            // Using .css() as a setter
+            $robot.css('width', (currentWidth + increasePx + 'px') );
+        });
+
+        $('#reset').click(function(){
+            // method chaining
+            $alertP.removeClass('hidden').addClass('show').text('Zoom back to the original');
+            $robot.css('width', totalOfPx / 5);
+        });
+
+        $('#toggle-theme').click(function(){
+            $('body').toggleClass('dark-theme');
+        });
+
+    });
+</script>
+</body>
+</html>
