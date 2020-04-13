@@ -4,9 +4,16 @@
     <meta charset="UTF-8">
     <title>Attributes</title>
     <style>
+
+        body {
+            background-color: white;
+            color:black;
+        }
+
         #robot-img{
             width: 20%;
         }
+
         #grades-table {
             width: 50%;
             height: 500px;
@@ -22,12 +29,21 @@
             visibility: visible;
         }
 
+        .dark-theme {
+            background-color: black;
+            color: white;
+        }
+
     </style>
 </head>
 <body>
 
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias consequuntur, dolorum impedit mollitia praesentium reiciendis sint. Amet architecto consequatur cum ducimus eligendi maxime minima perferendis, quod totam veniam. Animi, iusto!</p>
+
 <button id="zoom-in">+</button>
 <button id="reset">reset</button>
+<button id="toggle-theme">Dark mode</button>
 <p id="control-alert" class="alert hidden">placeholder</p>
 <div id="grades-table"></div>
 
@@ -62,6 +78,10 @@
             // method chaining
             $alertP.removeClass('hidden').addClass('show').text('Zoom back to the original');
             $robot.css('width', totalOfPx / 5);
+        });
+
+        $('#toggle-theme').click(function(){
+            $('body').toggleClass('dark-theme');
         });
 
     });
