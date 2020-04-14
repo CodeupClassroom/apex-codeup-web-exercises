@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Effects</title>
+    <style type="text/css">
+
+        #red.circle {
+            background-color: red;
+        }
+
+        #orange.circle {
+            background-color: darkorange;
+        }
+
+        #yellow.circle {
+            background-color: #FACE0A;
+        }
+
+        #green.circle {
+            background-color: #8cd63d;
+        }
+
+        #blue.circle {
+            background-color: darkblue;
+        }
+
+        #purple.circle {
+            background-color: rebeccapurple;
+        }
+
+        .circle {
+            width: 70px;
+            height: 70px;
+            border-radius: 35px;
+            margin-left: 15px;
+        }
+        .circles {
+            width: 80%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>jQuery Effects</h1>
+    <div class="circles">
+        <div id="red" class="circle"></div>
+        <div id="orange" class="circle"></div>
+        <div id="yellow" class="circle"></div>
+        <div id="green" class="circle"></div>
+        <div id="blue" class="circle"></div>
+        <div id="purple" class="circle"></div>
+    </div>
+    <button id="hide-circles">Hide All Circles</button>
+    <button id="show-circles">Show All Circles</button>
+    <button id="toggle-circles">Toggle Circles</button>
+    <br>
+    <button id="toggle-circles-fade">Toggle Circles with Fade</button>
+    <button id="toggle-circles-slide">Toggle Circles with Slide</button>
+
+    <script src="js/jquery.js" ></script>
+    <script>
+        $(document).ready(function(){
+            console.log('Ready');
+            var circleElements = $('.circle');
+            circleElements.click(function(){
+                $(this).hide();
+            });
+
+            $('#show-circles').click(function(){
+                circleElements.show();
+            });
+
+            $('#hide-circles').click(function(){
+                circleElements.hide();
+            });
+
+            $('#toggle-circles').click(function(){
+                circleElements.toggle();
+            });
+
+            $('#toggle-circles-fade').click(function(){
+                circleElements.fadeToggle(3000);
+            });
+
+            $('#toggle-circles-slide').click(function(){
+                circleElements.slideToggle(3000);
+            });
+        })
+    </script>
+</body>
+</html>
