@@ -23,10 +23,22 @@
         .first-item-highlight {
             color: blue;
         }
+
+        ul {
+            display: none;
+        }
+
+        #registration-reminder {
+            display: none;
+        }
     </style>
 </head>
 <body>
-
+<h2 id="registration-reminder">Please register to use the site.</h2>
+<div id="newsletter-offer">
+    <span id="offer-close-button">X</span>
+    <h1>Would you like to sign up for our newsletter?</h1>
+</div>
 <a href="/" id="display-dd">Show definitions</a>
 
 <dl>
@@ -87,11 +99,7 @@
 
 <button id="highlighter">Highlight the last li of each ul</button>
 
-<script
-        src="https://code.jquery.com/jquery-3.4.1.slim.js"
-        integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI="
-        crossorigin="anonymous">
-</script>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 <script>
     $(document).ready(function(){
 
@@ -119,6 +127,7 @@
         $('h3').click(function(){
             //$(this).next().children().css('font-weight', 'bold');
             $(this).next().children().toggleClass('bold-font');
+            $(this).next().slideToggle(3000);
         });
 
         $('li').click(function(){
@@ -127,6 +136,15 @@
             //$(this).parent().children().first().css('color', 'blue');
         });
 
+        $('#offer-close-button').click(function(){
+            $(this).parent().hide();
+        });
+
+        // setTimeout(function(){
+        //     $('#registration-reminder').fadeIn(3000);
+        // }, 8000);
+
+        $('#registration-reminder').delay(8000).fadeIn(3000);
     });
 </script>
 </body>
