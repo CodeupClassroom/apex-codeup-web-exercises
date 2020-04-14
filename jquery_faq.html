@@ -15,6 +15,14 @@
         dt {
             cursor: pointer;
         }
+
+        .bold-font {
+            font-weight: bold;
+        }
+
+        .first-item-highlight {
+            color: blue;
+        }
     </style>
 </head>
 <body>
@@ -53,6 +61,32 @@
     <dd class="invisible">Yogi lives there.</dd>
 </dl>
 
+<h3>Snæfellsjökull</h3>
+<ul>
+    <li>Stratovolcano</li>
+    <li>Sometimes it may be seen from the city of Reykjavík over Faxa Bay, at a distance of 120 km.</li>
+    <li>The mountain is one of the most famous sites of Iceland, primarily due to the novel Journey to the Center of the Earth (1864) by Jules Verne, in which the protagonists find the entrance to a passage leading to the center of the earth on Snæfellsjökull.</li>
+    <li>In August 2012 the summit was ice-free for the first time in recorded history.</li>
+</ul>
+
+<h3>Vatnajökull</h3>
+<ul>
+    <li>Vatnajökull National Park is divided into four territories.</li>
+    <li>Vatnajökull is Europe's largest glacier outside the arctic, with a surface area of 8,100 km2.</li>
+    <li>It encompasses all of Vatnajökull glacier and extensive surrounding areas. These include the national parks previously existing at Skaftafell in the southwest and Jökulsárgljúfur in the north.</li>
+    <li>On 5 July 2019, Vatnajökull National Park was inscribed as a World Heritage Site.</li>
+</ul>
+
+<h3>Þingvellir</h3>
+<ul>
+    <li>The National Gallery of Iceland owns more than 150 paintings by Ásgrímur Jónsson that have Þingvellir as their subject.git</li>
+    <li>The name Þingvellir is derived from the Old Norse Þingvǫllr, from þing (“thing, assembly”) and vǫllr (“field”), meaning assembly fields.</li>
+    <li>Þingvellir is associated with the Althing, the national parliament of Iceland, which was established at the site in 930 AD.</li>
+    <li>Þingvellir was designated as a World Heritage Site in 2004.</li>
+</ul>
+
+<button id="highlighter">Highlight the last li of each ul</button>
+
 <script
         src="https://code.jquery.com/jquery-3.4.1.slim.js"
         integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI="
@@ -74,6 +108,23 @@
 
         $('dt').click(function(){
             $(this).toggleClass('highlight');
+        });
+
+        $('#highlighter').click(function(){
+            $('ul').each(function(){
+                $(this).children().last().toggleClass('highlight');
+            });
+        });
+
+        $('h3').click(function(){
+            //$(this).next().children().css('font-weight', 'bold');
+            $(this).next().children().toggleClass('bold-font');
+        });
+
+        $('li').click(function(){
+            // li ---> ul -> lis of ul > first
+            $(this).parent().children().first().toggleClass('first-item-highlight')
+            //$(this).parent().children().first().css('color', 'blue');
         });
 
     });
