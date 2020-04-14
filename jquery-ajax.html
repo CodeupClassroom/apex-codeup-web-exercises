@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form>
+<input type="text" name="username" id="search-term" placeholder="username">
+    <button id="do-search">Search</button>
+</form>
+
+<table border="1">
+    <tr>
+        <th>Username</th>
+        <th>Avatar</th>
+    </tr>
+    <tbody>
+        <tr>
+            <td id="username"></td>
+            <td><img id="avatar"></td>
+        </tr>
+    </tbody>
+</table>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script>
+    "use strict";
+    $(document).ready(function(){
+        var $usernameCol = $("#username");
+        var $avatarImg = $("#avatar");
+
+        $("#do-search").click(function(event){
+            // stop the button from submitting the form by default
+            event.preventDefault();
+            var username = $("#search-term").val();
+
+            var url = "https://api.github.com/users/" + username;
+
+            $.ajax(url, {
+                type: "GET"
+            }).done(function(data, status) {
+                // console.log("Request status: " + status);
+                // console.log("Data returned from server:");
+                console.log(data);
+                $usernameCol.text(data.login);
+                $avatarImg.attr('src', data.avatar_url);
+            }).fail(function(error){
+                console.error(error);
+            }).always(function(){
+                console.log('always runs once you get a response');
+            });
+
+        });
+
+    });
+</script>
+</body>
+</html>
