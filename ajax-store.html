@@ -19,6 +19,8 @@
     <tbody id="insertProducts"></tbody>
 </table>
 
+<button id="update-btn">Update table</button>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
 <script>
@@ -26,14 +28,11 @@
     (function() {
         var url = "data/inventory.json";
 
-        $.get(url).done(function (data){
-            renderHTML(data);
-        }).fail(function (error){
-            console.error(error);
-        });
+        getInfo();
 
         function renderHTML(toolsArray){
             var HTML = "";
+            $("#insertProducts").empty(); // clean up your structure
 
             toolsArray.forEach(function(tool){
                 HTML = "<tr>" +
@@ -46,6 +45,19 @@
             });
 
         }
+
+        function getInfo(){
+            $.get(url).done(function (data){
+                renderHTML(data);
+            }).fail(function (error){
+                console.error(error);
+            });
+        }
+
+        $("#update-btn").click(function () {
+            getInfo();
+        });
+
     })();
 </script>
 
