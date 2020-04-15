@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Store</title>
+</head>
+<body>
+
+<h1>My Tool Store</h1>
+
+<table id="products" border="1">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Categories</th>
+        </tr>
+    </thead>
+    <tbody id="insertProducts"></tbody>
+</table>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+<script>
+    "use strict";
+    (function() {
+        var url = "data/inventory.json";
+
+        $.get(url).done(function (data){
+            renderHTML(data);
+        }).fail(function (error){
+            console.error(error);
+        });
+
+        function renderHTML(toolsArray){
+            var HTML = "";
+
+            toolsArray.forEach(function(tool){
+                HTML = "<tr>" +
+                    "            <td>"+tool.title+"</td>" +
+                    "            <td>"+tool.quantity+"</td>" +
+                    "            <td>$"+tool.price+"</td>" +
+                    "            <td>"+tool.categories+"</td>" +
+                    "        </tr>";
+                $("#insertProducts").append(HTML);
+            });
+
+        }
+    })();
+</script>
+
+</body>
+</html>
