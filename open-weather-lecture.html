@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather API</title>
+</head>
+<body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="js/keys.js"></script>
+
+<script>
+    "use strict";
+    (function() {
+
+        // $.get("http://api.openweathermap.org/data/2.5/weather", {
+        //     "APPID": OWM_KEY,
+        //     "q":     "Dallas, US",
+        //     "units": "imperial"
+        // }).done(function(data){
+        //     console.log(data);
+        // }).fail(function(errors){
+        //     console.error(errors);
+        // });
+
+        //,
+
+        // $.get("http://api.openweathermap.org/data/2.5/weather", {
+        //     APPID: OWM_KEY,
+        //     lat:    29.9557146,
+        //     lon:   -90.0692277,
+        //     units: "imperial"
+        // }).done(function(data) {
+        //     console.log('current weather', data);
+        // });
+
+        $.get("http://api.openweathermap.org/data/2.5/forecast", {
+            APPID: OWM_KEY,
+            lat:    29.9557146,
+            lon:   -90.0692277,
+            units: "imperial"
+        }).done(function(data) {
+            console.log('current weather', data);
+        });
+
+    })();
+</script>
+</body>
+</html>
