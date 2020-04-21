@@ -91,12 +91,30 @@
     // }
 
     // works for arrow functions as well
-    const sayHello = (name = 'World', dob = '0000-00-00') => `Hello, ${name}!, dob: ${dob}`;
+    // const sayHello = (name = 'World', dob = '0000-00-00') => `Hello, ${name}!, dob: ${dob}`;
+    //
+    // console.log(sayHello()); // "Hello, World!"
+    // console.log(sayHello('codeup')); // "Hello, codeup!"
+    // console.log(sayHello("Fer", '1990-05-03'));
+    // console.log(sayHello(undefined));
 
-    console.log(sayHello()); // "Hello, World!"
-    console.log(sayHello('codeup')); // "Hello, codeup!"
-    console.log(sayHello("Fer", '1990-05-03'));
-    console.log(sayHello(undefined));
+    // old way
+    // const name = 'codeup';
+    // const person = {
+    //     name: name,
+    //     age: 4
+    // };
+
+    // new shorthand
+    const company = 'codeup';
+    let language = "java";
+    const person = {
+        company,
+        age: 4,
+        language
+    };
+
+    console.log(person)
 
 
 </script>
