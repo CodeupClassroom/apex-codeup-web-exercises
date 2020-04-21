@@ -106,16 +106,28 @@
     // };
 
     // new shorthand
-    const company = 'codeup';
-    let language = "java";
-    const person = {
-        company,
-        age: 4,
-        language
-    };
+    // const company = 'codeup';
+    // let language = "java";
+    // const person = {
+    //     company,
+    //     age: 4,
+    //     language
+    // };
+    //
+    // console.log(person)
 
-    console.log(person)
+    // old way
+    // var person = {name: 'codeup', age: 4};
+    // var name = person.name;
+    // var age = person.age;
+    // console.log(name); // 'codeup'
+    // console.log(age); // 4
 
+    // new way
+    const person = {name: 'codeup', age: 4};
+    const {name, age} = person;
+    console.log(name); // 'codeup'
+    console.log(age); // 4
 
 </script>
 
