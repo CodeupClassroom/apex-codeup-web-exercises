@@ -13,47 +13,54 @@
     let firstClass = 2014;
     let username = "Fer";
 
-    console.log(Math.pow(2,2));
-    console.log( 2 ** 2 );
-
-    // without block scope
-    if (true) {
-        var name = 'codeup with var';
-    }
-    console.log(name); // 'codeup'
-
-    //  with block scope
-    if (true) {
-        let nameCodeup = 'codeup with let';
-        console.log(nameCodeup);
-    }
-    // console.log(nameCodeup); // undefined
-
-    // without block scope
-    for (var i = 0; i < 10; i++) {
-        console.log('local scope',i);
-    }
-
-    console.log('global scope', i); // 10
-
-    // with block scope
-    for (let ii = 0; ii < 10; ii++) {
-        console.log('local scope', ii);
-    }
-
-    // console.log('global scope', ii); // undefined
-
-    sendEmail();
-
-    function sendEmail(){
-        const serverIP = "192.1.1.1";
-        let email = "Fer@codeup.com";
-        console.log(email);
-        console.log(username);
-    }
-
-    console.log(username);
+    // console.log(Math.pow(2,2));
+    // console.log( 2 ** 2 );
+    //
+    // // without block scope
+    // if (true) {
+    //     var name = 'codeup with var';
+    // }
+    // console.log(name); // 'codeup'
+    //
+    // //  with block scope
+    // if (true) {
+    //     let nameCodeup = 'codeup with let';
+    //     console.log(nameCodeup);
+    // }
+    // // console.log(nameCodeup); // undefined
+    //
+    // // without block scope
+    // for (var i = 0; i < 10; i++) {
+    //     console.log('local scope',i);
+    // }
+    //
+    // console.log('global scope', i); // 10
+    //
+    // // with block scope
+    // for (let ii = 0; ii < 10; ii++) {
+    //     console.log('local scope', ii);
+    // }
+    //
+    // // console.log('global scope', ii); // undefined
+    //
+    // sendEmail();
+    //
+    // function sendEmail(){
+    //     const serverIP = "192.1.1.1";
+    //     let email = "Fer@codeup.com";
+    //     console.log(email);
+    //     console.log(username);
+    // }
+    //
+    // console.log(username);
     // console.log(email);
+
+
+    const name = 'Codeup';
+    console.log('Hello, ' + name + '!');
+    // same as
+    console.log(`Hello, ${name}!`);
+    console.log(`Hello, ${name.toUpperCase()}!`);
 
 </script>
 
