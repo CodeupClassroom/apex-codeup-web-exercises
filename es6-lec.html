@@ -77,8 +77,26 @@
     // const sayHello = name => `Hello, ${name}!`;
     // console.log(sayHello("Fer"));
 
+    // old way
+    // function sayHello(name) {
+    //     if (typeof name === 'undefined') {
+    //         name = 'World';
+    //     }
+    //     return 'Hello, ' + name + '!';
+    // }
 
+    //Es6 way
+    // function sayHello(name = 'World', dob = '0000-00-00') {
+    //     return `Hello, ${name}!, dob: ${dob}`;
+    // }
 
+    // works for arrow functions as well
+    const sayHello = (name = 'World', dob = '0000-00-00') => `Hello, ${name}!, dob: ${dob}`;
+
+    console.log(sayHello()); // "Hello, World!"
+    console.log(sayHello('codeup')); // "Hello, codeup!"
+    console.log(sayHello("Fer", '1990-05-03'));
+    console.log(sayHello(undefined));
 
 
 </script>
