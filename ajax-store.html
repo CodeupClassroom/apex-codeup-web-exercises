@@ -35,14 +35,16 @@
             $("#insertProducts").empty(); // clean up your structure
 
             toolsArray.forEach(function(tool){
-                HTML = "<tr>" +
-                    "            <td>"+tool.title+"</td>" +
-                    "            <td>"+tool.quantity+"</td>" +
-                    "            <td>$"+tool.price+"</td>" +
-                    "            <td>"+tool.categories+"</td>" +
-                    "        </tr>";
+                HTML = `<tr>
+                            <td>${tool.title}</td>
+                            <td>${tool.quantity}</td>
+                            <td>$${tool.price}</td>
+                            <td>${tool.categories}</td>
+                        </tr>`;
                 $("#insertProducts").append(HTML);
             });
+
+
 
         }
 
