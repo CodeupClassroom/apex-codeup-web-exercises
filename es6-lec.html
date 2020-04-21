@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+    "use strict";
+
+    let firstClass = 2014;
+
+    console.log(Math.pow(2,2));
+    console.log( 2 ** 2 );
+
+    // without block scope
+    if (true) {
+        var name = 'codeup with var';
+    }
+    console.log(name); // 'codeup'
+
+    //  with block scope
+    if (true) {
+        let nameCodeup = 'codeup with let';
+        console.log(nameCodeup);
+    }
+    // console.log(nameCodeup); // undefined
+
+    // without block scope
+    for (var i = 0; i < 10; i++) {
+        console.log('local scope',i);
+    }
+
+    console.log('global scope', i); // 10
+
+    // with block scope
+    for (let ii = 0; ii < 10; ii++) {
+        console.log('local scope', ii);
+    }
+
+    // console.log('global scope', ii); // undefined
+
+
+
+
+</script>
+
+</body>
+</html>
