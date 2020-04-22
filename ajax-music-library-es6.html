@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Music api</title>
+</head>
+<body>
+
+<div id="albums"></div>
+
+<script src="js/keys.js"></script>
+<script>
+    "use strict";
+
+        const url = "http://ws.audioscrobbler.com/2.0/?method=user.getTopAlbums&user=fernandoza&api_key="+LAST_FM_KEY+"&format=json";
+
+        const lastFMPromise = fetch(url);
+
+        lastFMPromise
+            .then( response => response.json()
+                .then( data => {
+                    let xlCover = "";
+                    let generatedHTML = "<div>";
+                    for(let album of data.topalbums.album){
+                        xlCover = album.image[3]['#text'];
+                        generatedHTML += `
+                        <h3>${album.name}</h3>
+                        <h4>${album.artist.name}</h4>
+                        <img src="${xlCover}" alt="album's artwork">
+                        `;
+                    }
+                    generatedHTML += "</div>";
+                    document.body.innerHTML = generatedHTML;
+                })
+            ).catch( error => console.log(error));
+
+</script>
+
+</body>
+</html>

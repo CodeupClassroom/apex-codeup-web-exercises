@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    "use strict";
+    let url = 'https://api.github.com/users';
+    // fetch(url)
+    //     .then(response => console.log(response))
+    //     .catch(error => console.error(error));
+
+    // create a promise and save into a var myPromise
+    const myPromise = fetch(url);
+
+    // handle the response if the promise is resolved
+    myPromise.then(response => response.json()
+        // 2nd step handle the response obj and get json data
+        .then( users => {
+          // handle the data and do something about it
+          let html = '<ul>';
+          for(let user of users){
+            html += `<li>${user.login}</li>`
+          }
+          html += '</ul>';
+          document.body.innerHTML = html;
+        })
+    );
+
+    // handle the errors if the promise is not resolved
+    myPromise.catch(error => console.error(error));
+
+    // const myCustomPromise = new Promise((resolve, reject) => {
+    //     let random = Math.random();
+    //     console.log(random);
+    //     if (random > 0.5) {
+    //         resolve();
+    //     } else {
+    //         reject();
+    //     }
+    // });
+    //
+    // myCustomPromise.then( () => console.log('this is resolved!') );
+    // myCustomPromise.catch( () => console.log('this is being rejected') );
+
+
+    function makeRequest() {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                if (Math.random() > 0.1) {
+                    resolve('Here is your data: ...');
+                } else {
+                    reject('Network Connection Error!');
+                }
+            }, 1500);
+        });
+    }
+
+    const request = makeRequest();
+    console.log(request); // pending promise
+    request.then(data => console.log('Promise resolved!', data));
+    // if resolved, will log "Promise resolved!" and "Here is your data: ..."
+    request.catch(error => console.log('Promise rejected!', error));
+    // if rejected, will log "Promise rejected!" and "Network Connection Error!"
+
+
+</script>
+
+</body>
+</html>
