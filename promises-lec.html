@@ -6,7 +6,6 @@
 </head>
 <body>
 
-
 <script>
     "use strict";
     let url = 'https://api.github.com/users';
@@ -21,10 +20,13 @@
     myPromise.then(response => response.json()
         // 2nd step handle the response obj and get json data
         .then( users => {
-            // handle the data and do something about it
+          // handle the data and do something about it
+          let html = '<ul>';
           for(let user of users){
-              console.log(user.login);
+            html += `<li>${user.login}</li>`
           }
+          html += '</ul>';
+          document.body.innerHTML = html;
         })
     );
 
