@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+    "use strict";
+    let url = 'https://api.github.com/users';
+    // fetch(url)
+    //     .then(response => console.log(response))
+    //     .catch(error => console.error(error));
+
+    // create a promise and save into a var myPromise
+    const myPromise = fetch(url);
+
+    // handle the response if the promise is resolved
+    myPromise.then(response => response.json()
+        // 2nd step handle the response obj and get json data
+        .then( users => {
+            // handle the data and do something about it
+          for(let user of users){
+              console.log(user.login);
+          }
+        })
+    );
+
+    // handle the errors if the promise is not resolved
+    myPromise.catch(error => console.error(error));
+
+
+</script>
+
+</body>
+</html>
