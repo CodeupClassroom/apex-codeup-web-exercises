@@ -33,18 +33,39 @@
     // handle the errors if the promise is not resolved
     myPromise.catch(error => console.error(error));
 
-    const myCustomPromise = new Promise((resolve, reject) => {
-        let random = Math.random();
-        console.log(random);
-        if (random > 0.5) {
-            resolve();
-        } else {
-            reject();
-        }
-    });
+    // const myCustomPromise = new Promise((resolve, reject) => {
+    //     let random = Math.random();
+    //     console.log(random);
+    //     if (random > 0.5) {
+    //         resolve();
+    //     } else {
+    //         reject();
+    //     }
+    // });
+    //
+    // myCustomPromise.then( () => console.log('this is resolved!') );
+    // myCustomPromise.catch( () => console.log('this is being rejected') );
 
-    myCustomPromise.then( () => console.log('this is resolved!') );
-    myCustomPromise.catch( () => console.log('this is being rejected') );
+
+    function makeRequest() {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                if (Math.random() > 0.1) {
+                    resolve('Here is your data: ...');
+                } else {
+                    reject('Network Connection Error!');
+                }
+            }, 1500);
+        });
+    }
+
+    const request = makeRequest();
+    console.log(request); // pending promise
+    request.then(data => console.log('Promise resolved!', data));
+    // if resolved, will log "Promise resolved!" and "Here is your data: ..."
+    request.catch(error => console.log('Promise rejected!', error));
+    // if rejected, will log "Promise rejected!" and "Network Connection Error!"
+
 
 </script>
 
