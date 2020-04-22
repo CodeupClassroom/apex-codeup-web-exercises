@@ -1,5 +1,3 @@
-
-
 function getUserLastCommit(username) {
     let url = `https://api.github.com/users/${username}/events/public`;
 
@@ -9,16 +7,8 @@ function getUserLastCommit(username) {
         )
 }
 
-getUserLastCommit('fmendozaro');
-getUserLastCommit('douglas-codeup');
+getUserLastCommit('fmendozaro')
+    .then( lastCommitDate => console.log('lastCommitDate',lastCommitDate));
 
-// later on...
-//
-// getGithubUsernames().then( users => {
-//     users.forEach( userObj => {
-//         // do something with each username
-//         console.log(userObj.login);
-//     });
-// }).catch(error => console.error(error));
-
-
+getUserLastCommit('douglas-codeup')
+    .then( lastCommitDate => document.body.innerHTML = `${lastCommitDate} lastCommitDate`);
