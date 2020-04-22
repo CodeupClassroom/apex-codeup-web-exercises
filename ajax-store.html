@@ -26,37 +26,32 @@
 <script>
     "use strict";
     (function() {
-        var url = "data/inventory.json";
+        let url = "data/inventory.json";
 
         getInfo();
 
         function renderHTML(toolsArray){
-            var HTML = "";
+            let HTML = "";
             $("#insertProducts").empty(); // clean up your structure
 
-            toolsArray.forEach(function(tool){
-                HTML = "<tr>" +
-                    "            <td>"+tool.title+"</td>" +
-                    "            <td>"+tool.quantity+"</td>" +
-                    "            <td>$"+tool.price+"</td>" +
-                    "            <td>"+tool.categories+"</td>" +
-                    "        </tr>";
+            toolsArray.forEach( tool => {
+                HTML = `<tr>
+                            <td>${tool.title}</td>
+                            <td>${tool.quantity}</td>
+                            <td>$${tool.price}</td>
+                            <td>${tool.categories}</td>
+                        </tr>`;
                 $("#insertProducts").append(HTML);
             });
-
         }
 
         function getInfo(){
-            $.get(url).done(function (data){
-                renderHTML(data);
-            }).fail(function (error){
-                console.error(error);
-            });
+            $.get(url)
+                .done( data => renderHTML(data) )
+                .fail( error => console.error(error) );
         }
 
-        $("#update-btn").click(function () {
-            getInfo();
-        });
+        $("#update-btn").click( () => getInfo());
 
     })();
 </script>

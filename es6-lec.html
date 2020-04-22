@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script src="js/keys.js"></script>
+<script>
+    "use strict";
+
+    let firstClass = 2014;
+    let username = "Fer";
+
+    // console.log(Math.pow(2,2));
+    // console.log( 2 ** 2 );
+    //
+    // // without block scope
+    // if (true) {
+    //     var name = 'codeup with var';
+    // }
+    // console.log(name); // 'codeup'
+    //
+    // //  with block scope
+    // if (true) {
+    //     let nameCodeup = 'codeup with let';
+    //     console.log(nameCodeup);
+    // }
+    // // console.log(nameCodeup); // undefined
+    //
+    // // without block scope
+    // for (var i = 0; i < 10; i++) {
+    //     console.log('local scope',i);
+    // }
+    //
+    // console.log('global scope', i); // 10
+    //
+    // // with block scope
+    // for (let ii = 0; ii < 10; ii++) {
+    //     console.log('local scope', ii);
+    // }
+    //
+    // // console.log('global scope', ii); // undefined
+    //
+    // sendEmail();
+    //
+    // function sendEmail(){
+    //     const serverIP = "192.1.1.1";
+    //     let email = "Fer@codeup.com";
+    //     console.log(email);
+    //     console.log(username);
+    // }
+    //
+    // console.log(username);
+    // console.log(email);
+
+
+    // const name = 'Codeup';
+    // console.log('Hello, ' + name + '!');
+    // same as
+    // console.log(`Hello, ${name}!`);
+    // console.log(`Hello, ${name.toUpperCase()}!`);
+    //
+    // let names = ["Fer", "Douglas", "Sam"];
+    //
+    // for (let oneName of names) {
+    //     console.log(oneName);
+    // }
+
+    // const sayHello = function (name) {
+    //     return 'Hello, ' + name + '!';
+    // };
+    // same as
+    // Arrow function
+    // syntax sugar
+    // const sayHello = name => `Hello, ${name}!`;
+    // console.log(sayHello("Fer"));
+
+    // old way
+    // function sayHello(name) {
+    //     if (typeof name === 'undefined') {
+    //         name = 'World';
+    //     }
+    //     return 'Hello, ' + name + '!';
+    // }
+
+    //Es6 way
+    // function sayHello(name = 'World', dob = '0000-00-00') {
+    //     return `Hello, ${name}!, dob: ${dob}`;
+    // }
+
+    // works for arrow functions as well
+    // const sayHello = (name = 'World', dob = '0000-00-00') => `Hello, ${name}!, dob: ${dob}`;
+    //
+    // console.log(sayHello()); // "Hello, World!"
+    // console.log(sayHello('codeup')); // "Hello, codeup!"
+    // console.log(sayHello("Fer", '1990-05-03'));
+    // console.log(sayHello(undefined));
+
+    // old way
+    // const name = 'codeup';
+    // const person = {
+    //     name: name,
+    //     age: 4
+    // };
+
+    // new shorthand
+    // const company = 'codeup';
+    // let language = "java";
+    // const person = {
+    //     company,
+    //     age: 4,
+    //     language
+    // };
+    //
+    // console.log(person)
+
+    // old way
+    // var person = {name: 'codeup', age: 4};
+    // var name = person.name;
+    // var age = person.age;
+    // console.log(name); // 'codeup'
+    // console.log(age); // 4
+
+    // new way
+    const person = {name: 'codeup', age: 4};
+    const {name, age} = person;
+    console.log(name); // 'codeup'
+    console.log(age); // 4
+
+</script>
+
+</body>
+</html>

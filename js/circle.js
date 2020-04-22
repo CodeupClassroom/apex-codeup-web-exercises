@@ -10,13 +10,13 @@
         },
         logInfo: function (doRounding) {
 
-            var area = this.getArea();
+            var calculatedArea = this.getArea();
 
             if(doRounding === true){
-                area = Math.round( area );
+                calculatedArea = Math.round( calculatedArea );
             }
 
-            console.log("Area of a circle with radius: " + this.radius + ", is: " +  area);
+            console.log("Area of a circle with radius: " + this.radius + ", is: " +  calculatedArea);
         }
     };
 

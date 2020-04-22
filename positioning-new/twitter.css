@@ -17,7 +17,7 @@ body, html {
     font-family: Arial, Ubuntu, sans-serif;
 }
 header {
-    background-image: url("../positioning-new/bush.png");
+    background-image: url("bush.png");
     padding-top: 275px;
 }
 a {
@@ -25,19 +25,11 @@ a {
 }
 .top-nav {
     background: var(--light-bg);
-    position: fixed;
-    width: 100%;
-    z-index: 999;
-    opacity: 0.9;
 }
 .nav {
     list-style-type: none;
     padding: 0;
     margin: 0;
-}
-.nav-item {
-    padding: 1.5em;
-    display: inline-block;
 }
 .nav-link {
     color: var(--main-link-color);
@@ -49,19 +41,7 @@ a {
 }
 .profile {
     background: var(--light-bg);
-    height: 80px;
 }
-.profile-image {
-    position: absolute;
-}
-.profile-form {
-    line-height: 80px;
-}
-
-.container {
-    padding: 2em;
-}
-
 .btn {
     border: 1px solid var(--main-link-color);
     color: var(--main-link-color);
@@ -83,44 +63,4 @@ a {
 }
 .text-muted {
     color: var(--main-link-color);
-}
-.profile-details {
-    float: left;
-    width: calc(25% - 1em);
-    margin: 0 0.5em;
-}
-.timeline {
-    float: left;
-    width: calc(50% - 1em);
-    margin: 0 0.5em 0 0.5em;
-}
-.who-to-follow {
-    float: left;
-    width: calc(25% - 1em);
-    margin: 0 0.5em;
-}
-.media {
-    width: 100%;
-    background-color: var(--light-bg);
-    border-bottom: 1px solid var(--separator-color);
-    padding: 0.5em;
-    overflow: auto;
-}
-.media-image {
-    margin-top: 1.33em;
-    width: 50px;
-    float: left;
-}
-.media-body {
-    width: calc(100% - 50px);
-    float: left;
-}
-
-.profile-entry {
-    list-style: none;
-    margin: .3em 0;
-}
-
-.profile-items {
-    padding: 0;
 }
