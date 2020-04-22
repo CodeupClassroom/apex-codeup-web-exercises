@@ -33,6 +33,18 @@
     // handle the errors if the promise is not resolved
     myPromise.catch(error => console.error(error));
 
+    const myCustomPromise = new Promise((resolve, reject) => {
+        let random = Math.random();
+        console.log(random);
+        if (random > 0.5) {
+            resolve();
+        } else {
+            reject();
+        }
+    });
+
+    myCustomPromise.then( () => console.log('this is resolved!') );
+    myCustomPromise.catch( () => console.log('this is being rejected') );
 
 </script>
 
