@@ -3,7 +3,13 @@ function getUserLastCommit(username) {
 
     return fetch(url, {headers: {'Authorization': `token ${GITHUB_TOKEN}`}})
         .then(response => response.json()
-            .then( data => data[0].created_at )
+            .then( listOfEvents => {
+                for(let event of listOfEvents){
+                    if(event.type === 'PushEvent'){
+                        return event.created_at;
+                    }
+                }
+            })
         )
 }
 
