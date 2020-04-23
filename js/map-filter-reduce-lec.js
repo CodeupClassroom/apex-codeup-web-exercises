@@ -162,3 +162,20 @@ const sumOfBudgetMacBookProPrices = mbpModels
     .reduce((total, price) => total + price , 0 );
 
 console.log(sumOfBudgetMacBookProPrices);
+
+const laureatesElement = document.getElementById('laureates');
+
+const url = 'http://api.nobelprize.org/v1/laureate.json';
+fetch(url)
+    .then((data) => data.json())
+    .then((data)=>{
+        console.log(data);
+        const { laureates } = data;
+        laureatesElement.innerHTML = laureates
+            .filter( laureate => laureate.prizes.length > 1 )
+            .map( laureate => `${laureate.firstname} ${laureate.surname} won ${laureate.prizes.length} prizes.` )
+            .reduce((html, laureateDesc) => {
+                return html + `<li>${laureateDesc}</li>`
+            }, '')
+
+    });
